@@ -4,7 +4,6 @@ let
   terminal = "ghostty";
 in {
   imports = [
-    inputs.niri.homeModules.niri
     ./swww.nix
   ];
 
@@ -13,9 +12,6 @@ in {
   ];
   
   programs.niri = {
-    enable = true;
-    package = pkgs.niri-unstable;
-
     settings = {
       # startup programs
       spawn-at-startup = [
@@ -341,7 +337,7 @@ in {
         # wallpaper
         # "Mod+B".action = spawn ""
         # cliphist
-        "Mod+P".action = sh "cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
+        "Mod+P".action = sh "cliphist list | wofi -S dmenu | cliphist decode | wl-copy";
 
         # quit Niri
         "Mod+Shift+Q".action = quit;

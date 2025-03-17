@@ -58,6 +58,7 @@
             ./configuration.nix
 
             nixos-hardware.nixosModules.lenovo-legion-16irx8h
+            inputs.niri.nixosModules.niri
             stylix.nixosModules.stylix
 
             home-manager.nixosModules.home-manager

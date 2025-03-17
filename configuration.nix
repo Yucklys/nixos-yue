@@ -249,10 +249,6 @@
 hotkey-overlay {
     skip-at-startup
 }
-environment {
-    GTK_USE_PORTAL "0"
-    GDK_DEBUG "no-portals"
-}
 input {
     keyboard {
              xkb {
