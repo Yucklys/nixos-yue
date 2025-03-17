@@ -1,0 +1,264 @@
+@import "nord.css";
+
+@keyframes blink-warning {
+    70% {
+        color: @nord4;
+    }
+
+    to {
+        color: @nord0;
+        background-color: @nord13;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+      color: @nord4;
+    }
+
+    to {
+        color: @nord0;
+        background-color: @nord11;
+    }
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 3px;
+    min-height: 0;
+    margin: 0.2em 0.3em;
+    font-size: 14px;
+}
+
+label.module {
+		padding: 0 0.6em;
+}
+
+/* The whole bar */
+#waybar {
+    background: @nord0;
+    color: @nord4;
+    font-family: "LXGW WenKai", "Font Awesome 6 Free", "Font Awesome 6 Brands";
+    font-size: 12px;
+    font-weight: bold;
+		padding: 0 0;
+}
+
+/* Each module that should blink */
+#mode,
+#memory,
+#temperature,
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Each critical module */
+#memory.critical,
+#cpu.critical,
+#temperature.critical,
+#battery.critical {
+    color: @nord11;
+}
+
+/* Each critical that should blink */
+#mode,
+#memory.critical,
+#temperature.critical,
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+/* Each warning */
+#network.disconnected,
+#memory.warning,
+#cpu.warning,
+#temperature.warning,
+#battery.warning {
+    background: @nord13;
+    color: @nord0;
+}
+
+/* Each warning that should blink */
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+/* And now modules themselves in their respective order */
+
+#mode { /* Shown current Sway mode (resize etc.) */
+    color: @nord4;
+    background: @nord15;
+}
+
+/* Workspaces stuff */
+
+#workspaces {
+		padding: 0 0;
+		background-color: @nord3;
+}
+
+#workspaces button {
+		color: @nord4;
+		padding: 0 0.2em;
+		background-color: @nord3;
+}
+
+#workspaces button.visible {
+		color: @nord4;
+}
+
+#workspaces button.active {
+    color: @nord8;
+}
+
+#workspaces button.urgent {
+    color: @nord12;
+}
+
+#window {
+    /* margin-right: 40px; */
+    /* margin-left: 40px; */
+    font-weight: normal;
+    background: @nord0;
+}
+#bluetooth {
+    background: @nord9;
+    color: @nord0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#custom-gpu {
+    background: @nord0;
+    font-weight: bold;
+}
+#custom-weather {
+    background: @nord15;
+    font-weight: bold;
+}
+#custom-pacman {
+    background: @nord4;
+    color: @nord0;
+    font-weight: bold;
+}
+#custom-scratchpad-indicator {
+    background: @nord4;
+    color: @nord0;
+    font-weight: bold;
+}
+#idle_inhibitor {
+    background: @nord1;
+    color: @nord4;
+    /*font-size: 1.6em;*/
+    font-weight: bold;
+}
+#custom-alsa {
+    background: @nord9;
+}
+
+#network {
+    background: @nord9;
+    color: @nord0;
+}
+
+#memory {
+    background: @nord9;
+}
+
+#cpu {
+    background: @nord1;
+    color: @nord4;
+}
+#cpu.critical {
+    color: @nord0;
+}
+#language {
+    background: @nord1;
+    color: @nord0;
+}
+#custom-cpugovernor {
+    background-color: @nord1;
+    color: @nord0;
+}
+#custom-cpugovernor.perf {
+    
+}
+#temperature {
+    background-color: @nord1;
+    color: @nord4;
+}
+#temperature.critical {
+    background:  @nord11;
+}
+#custom-layout {
+    background: @nord7;
+    color: @nord0;
+}
+
+#battery {
+    background: @nord3;
+    color: @nord4;
+}
+
+#backlight {
+    background: @nord9;
+}
+
+#clock {
+    background: @nord1;
+    color: @nord4;
+}
+
+#pulseaudio {
+    background: @nord9;
+    color: @nord0;
+}
+
+#pulseaudio.muted {
+    background: @nord11;
+    color: @nord0;
+}
+#pulseaudio.source-muted {
+    background: @nord12;
+    color: @nord0;
+}
+#tray {
+    background: @nord3;
+		padding: 0 0;
+}
+#mpd {
+    background: @nord8;
+    color: @nord0;
+}
+#mpris {
+    background: @nord0;
+    color: @nord4;
+}
+#mpris.paused {
+		background: @nord3;
+}
+#mpris.stopped {
+		background: @nord0;
+		color: @nord4;
+}
+#mpris.playing {
+    background: @nord8;
+    color: @nord0;
+}
+#user {
+    background: @nord8;
+    color: @nord0;
+}
+#custom-powermenu {
+    color: @nord11;
+		background: @nord3;
+}

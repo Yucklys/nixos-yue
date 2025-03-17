@@ -1,0 +1,205 @@
+{
+		"bluetooth": {
+				"format": "{icon}",
+				"format-icons": {
+						"disabled": "",
+						"enabled": ""
+				},
+				"interval": 30,
+				"on-click": "blueman-manager"
+		},
+		"battery": {
+				"interval": 60,
+				"states": {
+						"warning": 30,
+						"critical": 15
+				},
+				"format": "{icon}",
+				"format-icons": ["", "", "", "", ""],
+				"tooltip-format": "{capacity}%, {timeTo}",
+				"max-length": 25
+		},
+		"clock": {
+				"format": "  {:%H:%M    %e %b}",
+				"on-click": "gnome-calendar",
+				"today-format": "<b>{}</b>",
+				"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+		},
+		"cpu": {
+				"format": "  {max_frequency}GHz <span color=\"#a6adc8\">| {usage}%</span>",
+				"interval": 1,
+				"max-length": 15,
+				"min-length": 15,
+				"on-click": "alacritty -e htop --sort-key PERCENT_CPU",
+				"tooltip": false
+		},
+		"hyprland/language": {
+				"format": "<big></big> {}",
+				"max-length": 25,
+				"min-length": 5
+		},
+		"hyprland/workspaces": {
+				"format": "{icon}",
+				"format-icons": {
+						"1": "壹",
+						"2": "贰",
+						"3": "叁",
+						"4": "肆",
+						"5": "伍",
+						"6": "陆",
+						"7": "柒",
+						"8": "捌",
+						"9": "玖",
+				},
+				"window-rewrite-default": "",
+				"window-rewrite": {
+						"title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+						"class<.*qutebrowser.*>": " ", // Windows whose classes are "qutebrowser"
+						"class<qutebrowser> title<.*github.*>": "",
+						"class<foot>": "",
+						"class<emacs>": "",
+						"class<rstudio>": "",
+						"class<libreoffice-.*>": "",
+						"code": "",
+				},
+		},
+		"hyprland/window": {
+				"max-length": 40,
+				"min-length": 5,
+				"rewrite": {
+						"(.*) - Vivaldi": "  $1",
+						"(.*) - Emacs": " $1",
+						"(.*) - Anki": " $1",
+						"Zellij \\((.*)\\) - (.*)": " $1 - $2",
+						"(.*) - Libreoffice Calc": " $1",
+						"(.*) - Libreoffice Writer": " $1",
+						"(.*) - Libreoffice Impress": " $1"
+				},
+				"separate-outputs": false
+		},
+		"hyprland/workspaces": {
+				"format": "{icon}",
+				"format-icons": {
+						"1": "<span color=\"#D8DEE9\">壹</span>",
+						"2": "<span color=\"#D8DEE9\">贰</span>",
+						"3": "<span color=\"#D8DEE9\">叁</span>",
+						"4": "<span color=\"#88C0D0\">肆</span>",
+						"5": "<span color=\"#A3BE8C\">伍</span>",
+						"6": "<span color=\"#D8DEE9\">陆</span>",
+						"7": "<span color=\"#D8DEE9\">柒</span>",
+						"8": "<span color=\"#D8DEE9\">捌</span>",
+						"9": "<span color=\"#D8DEE9\">玖</span>",
+						"10": "<span color=\"#D8DEE9\">拾</span>",
+						"urgent": "<span color=\"#BF616A\"></span>",
+				},
+				"on-scroll-up": "hyprctl dispatch workspace m+1",
+				"on-scroll-down": "hyprctl dispatch workspace m-1",
+				"sort-by": "number"
+		},
+		"niri/workspaces": {
+				"all-outputs": false,
+				"current-only": false,
+		},
+		"niri/window": {
+				"separate-outputs": true,
+		},
+		"idle_inhibitor": {
+				"format": "{icon}",
+				"format-icons": {
+						"activated": "",
+						"deactivated": ""
+				},
+				"max-length": 5,
+				"min-length": 2,
+				"tooltip": true
+		},
+		"network": {
+				"family": "ipv4",
+				"format-alt": "{ifname}: {ipaddr}/{cidr}",
+				"format-disconnected": "",
+				"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+				"format-linked": "{ifname} (No IP) ",
+				"format-wifi": "",
+				"tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}",
+				"tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}"
+		},
+		"pulseaudio": {
+				"format": "{icon} {volume}% {format_source}",
+				"format-bluetooth": "{volume}% {icon}  {format_source}",
+				"format-bluetooth-muted": " {icon}  {format_source}",
+				"format-icons": {
+						"car": "",
+						"default": [
+								"",
+								"",
+								""
+						],
+						"hands-free": "",
+						"headphone": "",
+						"headset": "",
+						"phone": "",
+						"portable": ""
+				},
+				"format-muted": " {format_source}",
+				"format-source": "",
+				"format-source-muted": "",
+				"on-click": "pavucontrol",
+				"on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+				"scroll-step": 3
+		},
+		"temperature": {
+				"critical-threshold": 74,
+				"format": "{icon} {temperatureC}°C",
+				"format-critical": " {temperatureC}°C",
+				"format-icons": [
+						"",
+						"",
+						""
+				],
+				"interval": 4,
+				"max-length": 7,
+				"min-length": 7
+		},
+		"tray": {
+				"spacing": 5
+		},
+		"mpd": {
+				"format": "{artist} - {title} ",
+				"format-disconnected": "DISCONNECT ",
+				"format-stopped": "STOP ",
+				"format-paused": "PAUSE ",
+				"max-length": 40,
+				"interval": 10,
+				"tooltip-format": "MPD (connected)",
+				"tooltip-format-disconnected": "MPD (disconnected)",
+				"on-click": "alacritty -e ncmpcpp"
+		},
+		"mpris": {
+				"format": " {player_icon} {dynamic}",
+				"format-paused": " {status_icon} {dynamic}",
+				"format-stopped": "{status_icon}",
+				"dynamic-order": ["title", "artist", "album", "position", "length"],
+				"dynamic-len": 20,
+				"player-icons": {
+						"default": "",
+						"mpd": "",
+						"spotifyd": ""
+				},
+				"status-icons": {
+						"playing": "",
+						"paused": "",
+						"stopped": ""
+				},
+		},
+		"user": {
+				"format": " {user} ( {work_H} H today ↑)",
+				"interval": 60,
+				"height": 30,
+				"width": 30
+		},
+		"custom/powermenu": {
+				"format": "",
+				"tooltip": false,
+				"on-click": "wlogout"
+		}
+}
