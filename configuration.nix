@@ -9,7 +9,6 @@
     [ # Include the results of the hardware scan.
       ./system-options.nix
       ./hardware-configuration.nix
-      ./cachix.nix
       ./nvidia.nix
       ./video.nix
       # ./game.nix
