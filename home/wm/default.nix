@@ -119,4 +119,6 @@ in {
                else if wm == "niri" then niri-settings
                else {};
   };
+
+  systemd.user.services.hypridle.Unit.After = [ "graphical-session.target" ];
 }

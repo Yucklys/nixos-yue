@@ -274,7 +274,7 @@ spawn-at-startup "sh" "-c" "${pkgs.greetd.regreet}/bin/regreet; pkill -f niri"
     enable = true;
     settings = {
       default_session = {
-        command = "niri -c ${niri-config}";
+        command = "niri -c ${niri-config} --session";
         # command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time";
         user = "greeter";
       };

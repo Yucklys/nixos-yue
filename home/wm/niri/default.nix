@@ -38,6 +38,8 @@ in {
         # Force Clutter applications to use wayland
         CLUTTER_BACKEND = "wayland";
         NIXOS_OZONE_WL = "1";
+        # force goldendict to use wayland
+        GOLDENDICT_FORCE_WAYLAND = "1";
       };
 
       # change path to store screenshots
@@ -165,6 +167,15 @@ in {
             active = { color = "#f38ba8"; };
             inactive = { color = "#7d0d2d"; };
           };
+        }
+        {
+          # goldendict is a centered and floating window
+          matches = [ { app-id = "com/xiaoyifang/goldendict-ng.https://github."; } ];
+
+          open-floating = true;
+
+          default-column-width = { fixed = 500; };
+          default-window-height = { fixed = 500; };
         }
       ];
 
