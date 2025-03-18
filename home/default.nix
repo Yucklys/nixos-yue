@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, ... }:
+{ config, pkgs, pkgs-unstable, inputs, lib, ... }:
 
 let
   user = "yucklys";
@@ -47,6 +47,7 @@ in
 
   programs.rbw = {
     enable = true;
+    package = pkgs-unstable.rbw;
     settings.email = "yucklys687@outlook.com";
     settings.pinentry = pkgs.pinentry-gnome3;
   };
