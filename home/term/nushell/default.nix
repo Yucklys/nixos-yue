@@ -25,6 +25,7 @@ in
     shellAliases = {
       vim = "nvim";
       ec = "emacsclient -nc";
+      magit = "emacsclient -nc -e '(magit)'";
       devenv-init = "nix flake init --template github:cachix/devenv";
     };
   };
