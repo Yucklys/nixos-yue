@@ -67,4 +67,7 @@ in
       safe.directory = "/etc/nixos";
     };
   };
+
+  # password store
+  programs.password-store.enable = true;
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs-unstable, ... }:
 
 let
   my-python-packages = ps: with ps; [
@@ -23,13 +23,14 @@ let
     urllib3
     scipy
     urllib3
+    aider-chat
     # LSP
     python-lsp-server
     radian # ipython for R
   ];
 in
 {
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-unstable; [
     (python3.withPackages my-python-packages)
     uv # package manager
   ];
