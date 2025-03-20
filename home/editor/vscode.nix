@@ -13,18 +13,15 @@
     ];
 
     userSettings = lib.mkForce {
-      "editor" = {
-        "fontFamily" = "'MonoLisa'";
-      };
       "terminal" = {
         "integrated" = {
-          "fontFamily" = "'MonoLisa'";
+          "fontFamily" = "'Maple Mono SC NF'";
         };
       };
       "workbench" = {
         "colorTheme" = "Nord";
       };
-      "editor.fontFamily" = "'Mono Lisa', 'Fira Code'";
+      "editor.fontFamily" = "'Maple Mono SC NF', 'Fira Code'";
       "editor.fontLigatures" = true;
       "editor.fontSize" = 15;
       "workbench.colorTheme" = "Nord";

@@ -4,6 +4,7 @@
   programs.ghostty = {
     enable = true;
     settings = {
+      font-family = "Maple Mono SC NF";
       window-decoration = "auto";
       keybind = [
         # split controls

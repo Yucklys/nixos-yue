@@ -120,6 +120,7 @@
     wqy_microhei
     wqy_zenhei
     nerdfonts
+    maple-mono-SC-NF
     font-awesome
     symbola
     noto-fonts
