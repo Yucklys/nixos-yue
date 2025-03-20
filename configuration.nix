@@ -193,7 +193,8 @@
   stylix = {
     enable = true;
     image = ./wallpapers/ign_legendary.png;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/twilight.yaml";
+    base16Scheme = ./themes/ef-winter-base16.yaml;
     polarity = "dark";
     fonts = {
       serif = {
@@ -205,15 +206,15 @@
         name = "Noto Sans";
       };
       monospace = {
-        package = pkgs.fira-code;
-        name = "Fira Code";
+        package = pkgs.maple-mono-SC-NF;
+        name = "Maple Mono SC NF";
       };
     };
   };
 
   environment.shells = [pkgs.nushell];
   environment.sessionVariables = {
-    FLAKE = "/etc/nixos"; # indicate flake.nix for nh
+    FLAKE = "/home/yucklys/nixos-config"; # indicate flake.nix for nh
     NIXOS_OZONE_WL = "1"; # enable ozone for wayland
   };
 
