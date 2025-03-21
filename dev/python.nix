@@ -1,4 +1,4 @@
-{ config, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 let
   my-python-packages = ps: with ps; [
@@ -23,15 +23,27 @@ let
     urllib3
     scipy
     urllib3
-    aider-chat
+    pkgs-unstable.aider-chat
     # LSP
     python-lsp-server
     radian # ipython for R
+    pip
   ];
 in
 {
-  environment.systemPackages = with pkgs-unstable; [
-    (python3.withPackages my-python-packages)
-    uv # package manager
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      zlib zstd stdenv.cc.cc curl openssl attr libssh bzip2 libxml2 acl libsodium util-linux xz systemd
+    ];
+  };
+  # https://github.com/nix-community/nix-ld?tab=readme-ov-file#my-pythonnodejsrubyinterpreter-libraries-do-not-find-the-libraries-configured-by-nix-ld
+  environment.systemPackages = [
+    (pkgs.writeShellScriptBin "python" ''
+      export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+      exec ${pkgs.python3}/bin/python "$@"
+    '')
+    (pkgs.python3.withPackages my-python-packages)
+    pkgs.uv # package manager
   ];
 }

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgs-unstable, ... }:
 
 {
   # User packages
@@ -10,7 +10,7 @@
     wl-clipboard # copy & paste utilities
     cliphist # clipboard history manager
     satty # screenshot annotation tool
-    aider-chat # AI pair programming in your terminal
+    pkgs-unstable.aider-chat # AI pair programming in your terminal
 
     # apps
     goldendict-ng # dictionary
