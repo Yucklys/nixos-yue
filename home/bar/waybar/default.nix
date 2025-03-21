@@ -16,8 +16,9 @@ let
 in
 { programs.waybar = {
     enable = true;
+    systemd.enable = true; # start waybar with graphical-session.target
 
-    style = lib.mkForce ./style.css;
+    style = lib.mkAfter (builtins.readFile ./style.css);
 
     settings = [
       {
@@ -84,5 +85,6 @@ in
     source = ./nord.css;
   };
 
-  stylix.targets.waybar.enable = false;
+  stylix.targets.waybar.enable = true;
+  stylix.targets.waybar.addCss = false;
 }

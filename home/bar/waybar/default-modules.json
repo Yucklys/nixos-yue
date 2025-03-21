@@ -20,17 +20,17 @@
 				"max-length": 25
 		},
 		"clock": {
-				"format": "  {:%H:%M    %e %b}",
+				"format": " {:%H:%M  %e %b}",
 				"on-click": "gnome-calendar",
 				"today-format": "<b>{}</b>",
 				"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 		},
 		"cpu": {
-				"format": "  {max_frequency}GHz <span color=\"#a6adc8\">| {usage}%</span>",
+				"format": " {max_frequency}GHz/<span color=\"#a6adc8\">{usage}%</span>",
 				"interval": 1,
 				"max-length": 15,
 				"min-length": 15,
-				"on-click": "alacritty -e htop --sort-key PERCENT_CPU",
+				"on-click": "ghostty -e 'htop --sort-key PERCENT_CPU'",
 				"tooltip": false
 		},
 		"hyprland/language": {
@@ -97,8 +97,14 @@
 				"sort-by": "number"
 		},
 		"niri/workspaces": {
+				"format": "{icon}",
+				"format-icons": {
+						"active": "",
+						"focused": "",
+						"default": ""
+				},
 				"all-outputs": false,
-				"current-only": false,
+				"current-only": true,
 		},
 		"niri/window": {
 				"separate-outputs": true,
@@ -116,7 +122,7 @@
 		"network": {
 				"family": "ipv4",
 				"format-alt": "{ifname}: {ipaddr}/{cidr}",
-				"format-disconnected": "",
+				"format-disconnected": "󰖪",
 				"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
 				"format-linked": "{ifname} (No IP) ",
 				"format-wifi": "",
@@ -124,9 +130,7 @@
 				"tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}"
 		},
 		"pulseaudio": {
-				"format": "{icon} {volume}% {format_source}",
-				"format-bluetooth": "{volume}% {icon}  {format_source}",
-				"format-bluetooth-muted": " {icon}  {format_source}",
+				"format": "{icon} {volume}%",
 				"format-icons": {
 						"car": "",
 						"default": [
@@ -140,11 +144,10 @@
 						"phone": "",
 						"portable": ""
 				},
-				"format-muted": " {format_source}",
-				"format-source": "",
-				"format-source-muted": "",
-				"on-click": "pavucontrol",
-				"on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+				"format-muted": "",
+				"format-source-muted": "󰍭",
+				"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+				"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
 				"scroll-step": 3
 		},
 		"temperature": {
@@ -172,7 +175,7 @@
 				"interval": 10,
 				"tooltip-format": "MPD (connected)",
 				"tooltip-format-disconnected": "MPD (disconnected)",
-				"on-click": "alacritty -e ncmpcpp"
+				"on-click": "ghostty -e ncmpcpp"
 		},
 		"mpris": {
 				"format": " {player_icon} {dynamic}",

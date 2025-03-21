@@ -1,24 +1,23 @@
-@import "nord.css";
-
 @keyframes blink-warning {
     70% {
-        color: @nord4;
+        color: @base06;
     }
 
     to {
-        color: @nord0;
-        background-color: @nord13;
+        color: @base00;
+        background-color: @base0A;
     }
 }
 
+/* Animation for critical state blinking effect */
 @keyframes blink-critical {
     70% {
-      color: @nord4;
+      color: @base06;
     }
 
     to {
-        color: @nord0;
-        background-color: @nord11;
+        color: @base00;
+        background-color: @base08;
     }
 }
 
@@ -31,26 +30,26 @@
 * {
     border: none;
     border-radius: 3px;
+    font-family: "Maple Mono SC", "FiraCode Nerd Font Propo";
     min-height: 0;
     margin: 0.2em 0.3em;
     font-size: 14px;
 }
 
+/* Module label styling */
 label.module {
 		padding: 0 0.6em;
 }
 
-/* The whole bar */
+/* Main bar container */
 #waybar {
-    background: @nord0;
-    color: @nord4;
-    font-family: "LXGW WenKai", "Font Awesome 6 Free", "Font Awesome 6 Brands";
-    font-size: 12px;
+    background: @base00;
+    color: @base05;
     font-weight: bold;
 		padding: 0 0;
 }
 
-/* Each module that should blink */
+/* Modules that should blink */
 #mode,
 #memory,
 #temperature,
@@ -60,15 +59,15 @@ label.module {
     animation-direction: alternate;
 }
 
-/* Each critical module */
+/* Critical state modules */
 #memory.critical,
 #cpu.critical,
 #temperature.critical,
 #battery.critical {
-    color: @nord11;
+    color: @base08;
 }
 
-/* Each critical that should blink */
+/* Critical state modules that should blink */
 #mode,
 #memory.critical,
 #temperature.critical,
@@ -77,17 +76,17 @@ label.module {
     animation-duration: 2s;
 }
 
-/* Each warning */
+/* Warning state modules */
 #network.disconnected,
 #memory.warning,
 #cpu.warning,
 #temperature.warning,
 #battery.warning {
-    background: @nord13;
-    color: @nord0;
+    background: @base0A;
+    color: @base00;
 }
 
-/* Each warning that should blink */
+/* Warning state modules that should blink */
 #battery.warning.discharging {
     animation-name: blink-warning;
     animation-duration: 3s;
@@ -95,170 +94,205 @@ label.module {
 
 /* And now modules themselves in their respective order */
 
-#mode { /* Shown current Sway mode (resize etc.) */
-    color: @nord4;
-    background: @nord15;
+/* Sway mode indicator (resize etc.) */
+#mode {
+    color: @base05;
+    background: @base0E;
 }
 
-/* Workspaces stuff */
-
+/* Workspaces container */
 #workspaces {
 		padding: 0 0;
-		background-color: @nord3;
+		background-color: @base02;
 }
 
+/* Workspace button default state */
 #workspaces button {
-		color: @nord4;
+		color: @base05;
 		padding: 0 0.2em;
-		background-color: @nord3;
+		background-color: @base02;
 }
 
+/* Visible workspace button */
 #workspaces button.visible {
-		color: @nord4;
+		color: @base05;
 }
 
+/* Active workspace button */
 #workspaces button.active {
-    color: @nord8;
+    color: @base0D;
 }
 
+/* Urgent workspace button */
 #workspaces button.urgent {
-    color: @nord12;
+    color: @base09;
 }
 
+/* Window title */
 #window {
     /* margin-right: 40px; */
     /* margin-left: 40px; */
     font-weight: normal;
-    background: @nord0;
+    background: @base00;
 }
+/* Bluetooth indicator */
 #bluetooth {
-    background: @nord9;
-    color: @nord0;
+    background: @base0D;
+    color: @base00;
     font-size: 1.2em;
     font-weight: bold;
 }
+/* GPU status */
 #custom-gpu {
-    background: @nord0;
+    background: @base00;
     font-weight: bold;
 }
+/* Weather information */
 #custom-weather {
-    background: @nord15;
+    background: @base0E;
     font-weight: bold;
 }
+/* Package manager updates */
 #custom-pacman {
-    background: @nord4;
-    color: @nord0;
+    background: @base05;
+    color: @base00;
     font-weight: bold;
 }
+/* Scratchpad indicator */
 #custom-scratchpad-indicator {
-    background: @nord4;
-    color: @nord0;
+    background: @base05;
+    color: @base00;
     font-weight: bold;
 }
+/* Idle inhibitor */
 #idle_inhibitor {
-    background: @nord1;
-    color: @nord4;
+    background: @base01;
+    color: @base05;
     /*font-size: 1.6em;*/
     font-weight: bold;
 }
+/* ALSA volume control */
 #custom-alsa {
-    background: @nord9;
+    background: @base0D;
 }
 
+/* Network status */
 #network {
-    background: @nord9;
-    color: @nord0;
+    background: @base0D;
+    color: @base00;
 }
 
+/* Memory usage */
 #memory {
-    background: @nord9;
+    background: @base0D;
 }
 
+/* CPU usage */
 #cpu {
-    background: @nord1;
-    color: @nord4;
+    background: @base01;
+    color: @base05;
 }
+/* Critical CPU state */
 #cpu.critical {
-    color: @nord0;
+    color: @base00;
 }
+/* Input language */
 #language {
-    background: @nord1;
-    color: @nord0;
+    background: @base01;
+    color: @base00;
 }
+/* CPU governor */
 #custom-cpugovernor {
-    background-color: @nord1;
-    color: @nord0;
+    background-color: @base01;
+    color: @base00;
 }
+/* Performance CPU governor */
 #custom-cpugovernor.perf {
     
 }
+/* Temperature indicator */
 #temperature {
-    background-color: @nord1;
-    color: @nord4;
+    background-color: @base01;
+    color: @base05;
 }
+/* Critical temperature state */
 #temperature.critical {
-    background:  @nord11;
+    background:  @base08;
 }
+/* Keyboard layout */
 #custom-layout {
-    background: @nord7;
-    color: @nord0;
+    background: @base0C;
+    color: @base00;
 }
 
 #battery {
-    background: @nord3;
-    color: @nord4;
+    background: @base02;
+    color: @base05;
 }
 
+/* Screen backlight */
 #backlight {
-    background: @nord9;
+    background: @base0D;
 }
 
+/* Clock/time display */
 #clock {
-    background: @nord1;
-    color: @nord4;
+    background: @base01;
+    color: @base05;
 }
 
+/* PulseAudio volume */
 #pulseaudio {
-    background: @nord9;
-    color: @nord0;
+    background: @base0D;
+    color: @base00;
 }
 
+/* Muted audio output */
 #pulseaudio.muted {
-    background: @nord11;
-    color: @nord0;
+    background: @base08;
+    color: @base00;
 }
+/* Muted audio input */
 #pulseaudio.source-muted {
-    background: @nord12;
-    color: @nord0;
+    background: @base09;
+    color: @base00;
 }
+/* System tray */
 #tray {
-    background: @nord3;
+    background: @base02;
 		padding: 0 0;
 }
+/* Music Player Daemon */
 #mpd {
-    background: @nord8;
-    color: @nord0;
+    background: @base0C;
+    color: @base00;
 }
+/* Media player control (MPRIS) */
 #mpris {
-    background: @nord0;
-    color: @nord4;
+    background: @base00;
+    color: @base05;
 }
+/* Paused media state */
 #mpris.paused {
-		background: @nord3;
+		background: @base02;
 }
+/* Stopped media state */
 #mpris.stopped {
-		background: @nord0;
-		color: @nord4;
+		background: @base00;
+		color: @base05;
 }
+/* Playing media state */
 #mpris.playing {
-    background: @nord8;
-    color: @nord0;
+    background: @base0C;
+    color: @base00;
 }
+/* User information */
 #user {
-    background: @nord8;
-    color: @nord0;
+    background: @base0C;
+    color: @base00;
 }
+/* Power menu button */
 #custom-powermenu {
-    color: @nord11;
-		background: @nord3;
+    color: @base08;
+		background: @base02;
 }

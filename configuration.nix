@@ -121,6 +121,7 @@
     wqy_zenhei
     nerdfonts
     maple-mono-SC-NF
+    maple-mono
     font-awesome
     symbola
     noto-fonts

@@ -15,7 +15,6 @@ in {
     settings = {
       # startup programs
       spawn-at-startup = [
-        { command = ["waybar"]; }
         # enable the clipboard history
         { command = ["wl-paste" "--watch" "cliphist" "store"]; }
         # show wallpaper
@@ -88,7 +87,7 @@ in {
           enable = true;
           position = {
             x = 2679;
-            y = 0;
+            y = 400;
           };
           scale = 2;
         };
