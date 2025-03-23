@@ -9,6 +9,7 @@ in {
 
   home.packages = [
     pkgs.xwayland-satellite
+    (pkgs.writeShellScriptBin "niri-goto-window" ''nu "${inputs.self}/scripts/niri-goto-window.nu"'')
   ];
   
   programs.niri = {
@@ -234,6 +235,9 @@ in {
         "Mod+Ctrl+S".action = focus-monitor-right;
         "Mod+Ctrl+N".action = focus-monitor-down;
         "Mod+Ctrl+T".action = focus-monitor-up;
+
+        # use wofi to select a window
+        "Mod+O".action = spawn "niri-goto-window";
 
         "Mod+Shift+Ctrl+Left".action = move-column-to-monitor-left;
         "Mod+Shift+Ctrl+Right".action = move-column-to-monitor-right;
