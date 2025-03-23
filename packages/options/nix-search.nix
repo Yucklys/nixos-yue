@@ -6,6 +6,6 @@ in {
   environment.systemPackages = [
     pkgs-unstable.nix-search-tv # search nixpkgs
     # scripts
-    pkgs.ns # use fzf for nix-search-tv
+    ns # use fzf for nix-search-tv
   ];
 }
