@@ -23,6 +23,8 @@ in {
         { command = ["goldendict"]; }
         # xwayland support
         { command = ["xwayland-satellite"]; }
+        # restart fcitx5 session to refresh environment variables
+        { command = ["fcitx5" "-r"]; }
       ];
 
       environment = {
