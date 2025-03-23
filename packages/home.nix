@@ -15,7 +15,6 @@
     # apps
     goldendict-ng # dictionary
     pavucontrol # audio control
-    # FIXME: break in nixos-unstable
     rustdesk # remote desktop
     via # keyboard configurator
     discord # chat client

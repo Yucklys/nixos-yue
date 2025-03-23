@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   imports = [
@@ -13,6 +13,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    devenv
+    pkgs-unstable.devenv
   ];
 }

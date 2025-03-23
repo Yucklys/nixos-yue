@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgs-unstable, ... }:
 
 {
   # List packages installed in system profile. To search, run:
@@ -27,6 +27,7 @@
     pandoc # document converter
     appimage-run # run appimage in nix
     fzf # fuzzy finder
+    pkgs-unstable.nix-search-tv # search nixpkgs
 
     # libraries
     librime # library for rime input method
