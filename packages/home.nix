@@ -31,5 +31,8 @@
     file-roller # archive manager
     mpv # video player
     oculante # image viewer
+
+    # frontends
+    wofi-pass # wofi frontend for pass
   ];
 }

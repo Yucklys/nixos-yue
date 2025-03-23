@@ -187,7 +187,7 @@ in {
         "Mod+Shift+Slash".action = show-hotkey-overlay;
 
         "Mod+Return".action = spawn terminal;
-        "Mod+D".action = spawn "wofi" "--show" "drun" "-w" "2";
+        "Mod+D".action = spawn "wofi" "--show" "drun";
         "Super+Alt+L".action = spawn "hyprlock";
 
         # media control
@@ -350,6 +350,10 @@ in {
         # "Mod+B".action = spawn ""
         # cliphist
         "Mod+P".action = sh "cliphist list | wofi -S dmenu | cliphist decode | wl-copy";
+        # bitwarden
+        "Mod+B".action = spawn "rofi-rbw";
+        # pass store
+        "Mod+Ctrl+B".action = spawn "wofi-pass";
 
         # quit Niri
         "Mod+Shift+Q".action = quit;
