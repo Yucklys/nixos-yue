@@ -70,6 +70,4 @@ in
 
   # password store
   programs.password-store.enable = true;
-
-  # stylix settings
 }

@@ -6,6 +6,14 @@
 
   # Enable himalaya
   programs.himalaya.enable = true;
+  # Enable thunderbird
+  programs.thunderbird = {
+    enable = true;
+    package = pkgs.thunderbird;
+    profiles.default = {
+      isDefault = true;
+    };
+  };
   
   accounts.email.accounts = {
     umd = {
@@ -13,7 +21,7 @@
       address = "zli12330@terpmail.umd.edu";
       realName = "Zekun Li";
       userName = "zli12330@terpmail.umd.edu";
-      passwordCommand = "pass show umd-imap-passwd";
+      passwordCommand = "pass show email/umd";
       imap = {
         host = "imap.gmail.com";
         port = 993;
@@ -27,13 +35,14 @@
       };
 
       himalaya.enable = true;
+      thunderbird.enable = true;
     };
 
     gmail = {
       address = "yucklys687@gmail.com";
       realName = "Zekun Li";
       userName = "yucklys687@gmail.com";
-      passwordCommand = "pass show gmail-imap-passwd";
+      passwordCommand = "pass show email/gmail";
       imap = {
         host = "imap.gmail.com";
         port = 993;
@@ -47,13 +56,14 @@
       };
 
       himalaya.enable = true;
+      thunderbird.enable = true;
     };
 
     startmail = {
       address = "yucklys@startmail.com";
       realName = "Zekun Li";
       userName = "yucklys@startmail.com";
-      passwordCommand = "pass show startmail-imap-passwd";
+      passwordCommand = "pass show email/startmail";
       imap = {
         host = "imap.startmail.com";
         port = 993;
@@ -67,13 +77,14 @@
       };
 
       himalaya.enable = true;
+      thunderbird.enable = true;
     };
 
     outlook = {
       address = "yucklys687@outlook.com";
       realName = "Zekun Li";
       userName = "yucklys687@outlook.com";
-      passwordCommand = "pass show outlook-imap-passwd";
+      passwordCommand = "pass show email/outlook";
       imap = {
         host = "outlook.office365.com";
         port = 993;
@@ -88,6 +99,7 @@
       };
 
       himalaya.enable = true;
+      thunderbird.enable = true;
     };
   };
 }
