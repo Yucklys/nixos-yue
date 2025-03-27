@@ -89,8 +89,8 @@ in {
         DP-3 = {
           enable = true;
           position = {
-            x = 2679;
-            y = 400;
+            x = 2680;
+            y = 800;
           };
           scale = 2;
         };

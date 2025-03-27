@@ -111,9 +111,6 @@
     package = pkgs.niri-unstable;
   };
 
-  # KDEConnect
-  programs.kdeconnect.enable = true;
-
   # Fonts
   fonts.packages = with pkgs; [
     fira-code
