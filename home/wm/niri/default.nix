@@ -348,6 +348,8 @@ in {
         # Applications
         # emacs shortcuts
         "Mod+E".action = spawn "emacsclient" "-c";
+        # yazi file manager
+        "Mod+Ctrl+E".action = spawn "ghostty" "-e" "yazi";
         # goldendict
         "Mod+G".action = spawn "goldendict";
         # wallpaper
