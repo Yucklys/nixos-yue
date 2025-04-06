@@ -99,12 +99,12 @@
 		"niri/workspaces": {
 				"format": "{icon}",
 				"format-icons": {
-						"active": "",
+						"active": "",
 						"focused": "",
 						"default": ""
 				},
 				"all-outputs": false,
-				"current-only": true,
+				"current-only": false,
 		},
 		"niri/window": {
 				"separate-outputs": true,

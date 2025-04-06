@@ -16,7 +16,6 @@ let
 in
 { programs.waybar = {
     enable = true;
-    systemd.enable = true; # start waybar with graphical-session.target
 
     style = lib.mkAfter (builtins.readFile ./style.css);
 
