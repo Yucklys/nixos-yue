@@ -10,18 +10,19 @@
       normal = {
         "v" = "cmd-set-text /";
         "/" = "mode-enter caret";
+        "h" = "scroll left";
+        "s" = "scroll right";
+        "t" = "scroll up";
+        "n" = "scroll down";
+        "H" = "back";
+        "S" = "forward";
+        "T" = "tab-prev";
+        "N" = "tab-next";
+        "p" = "search-next";
+        "P" = "search-prev";
       };
     };
   };
-
-  # set as default browser
-  # xdg.mimeApps.defaultApplications = {
-  #   "text/html" = "org.qutebrowser.qutebrowser.desktop";
-  #   "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
-  #   "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
-  #   "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
-  #   "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
-  # };
 
   # do not use stylix theme
   stylix.targets.qutebrowser.enable = true;
