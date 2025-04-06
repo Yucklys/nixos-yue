@@ -75,6 +75,9 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
   };
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -243,49 +246,15 @@
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
-  services.greetd = let
-    niri-config = pkgs.writeText "niri-config" ''
-hotkey-overlay {
-    skip-at-startup
-}
-environment {
-    // fix startup delay for regreet
-    GTK_USE_PORTAL "0"
-    GDK_DEBUG "no-portals"
-}
-input {
-    keyboard {
-             xkb {
-                 layout "us"
-                 variant "dvorak"
-             }
-    } 
-}
-output "DP-3" {
-    off
-}
-output "HDMI-A-1" {
-		off
-}
-output "eDP-1" {
-    scale 1.600000
-    transform "normal"
-    position x=1080 y=840
-}
-
-spawn-at-startup "sh" "-c" "${pkgs.greetd.regreet}/bin/regreet; pkill -f niri"
-'';
-  in {
+  services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "niri -c ${niri-config}";
-        # command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time";
         user = "greeter";
       };
     };
   };
-  programs.regreet.enable = true;
 
   # Open ports in the firewall.
   networking.firewall = {

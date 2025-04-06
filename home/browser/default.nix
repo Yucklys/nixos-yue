@@ -8,21 +8,17 @@
   home.packages = with pkgs; [
     # nyxt
     # vivaldi
-    inputs.zen-browser.packages."${system}".default
+    # inputs.zen-browser.packages."${system}".default
   ];
 
-  home.sessionVariables = {
-    BROWSER = "zen";
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "qutebrowser.desktop";
+      "x-scheme-handler/http" = "qutebrowser.desktop";
+      "x-scheme-handler/https" = "qutebrowser.desktop";
+      "x-scheme-handler/about" = "qutebrowser.desktop";
+      "x-scheme-handler/unknown" = "qutebrowser.desktop";      
+    };
   };
-
-  # xdg.mimeApps = {
-  #   enable = true;
-  #   defaultApplications = {
-  #     "text/html" = "vivaldi-stable.desktop";
-  #     "x-scheme-handler/http" = "vivaldi-stable.desktop";
-  #     "x-scheme-handler/https" = "vivaldi-stable.desktop";
-  #     "x-scheme-handler/about" = "vivaldi-stable.desktop";
-  #     "x-scheme-handler/unknown" = "vivaldi-stable.desktop";      
-  #   };
-  # };
 }

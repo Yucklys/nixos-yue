@@ -21,7 +21,7 @@
     telegram-desktop # chat client
     zoom-us # video conferencing
     rofi-rbw-wayland # rofi frontend for rbw
-    xfce.thunar # GUI file manager
+    nautilus # GUI file manager
     teams-for-linux # Microsoft Teams
     hunspell # spell checker
     hunspellDicts.en_US # English dictionary
