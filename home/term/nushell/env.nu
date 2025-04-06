@@ -1,6 +1,3 @@
-# Browser
-$env.BROWSER = 'vivaldi-stable'
-
 # pnpm
 $env.PNPM_HOME = "/home/yucklys/.local/share/pnpm"
 

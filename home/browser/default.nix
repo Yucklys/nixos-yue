@@ -11,6 +11,10 @@
     inputs.zen-browser.packages."${system}".default
   ];
 
+  home.sessionVariables = {
+    BROWSER = "zen";
+  };
+
   # xdg.mimeApps = {
   #   enable = true;
   #   defaultApplications = {

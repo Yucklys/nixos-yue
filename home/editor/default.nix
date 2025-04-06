@@ -3,7 +3,8 @@
 {
   imports = [
     ./emacs.nix
-    ./vscode.nix
+    # ./vscode.nix
+    ./zed.nix
   ];
 
   home.sessionVariables = {
