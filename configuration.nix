@@ -71,15 +71,6 @@
     magicOrExtension = ''\x7fELF....AI\x02'';
   };
 
-  # Enable xdg-desktop-portal for wayland
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
-
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 

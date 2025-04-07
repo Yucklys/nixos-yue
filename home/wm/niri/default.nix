@@ -26,8 +26,6 @@ in {
         { command = ["xwayland-satellite"]; }
         # restart fcitx5 session to refresh environment variables
         { command = ["fcitx5" "-r"]; }
-        # fix a org.freedesktop.portal.openURI error
-        { command = ["systemctl" "--user" "restart" "xdg-desktop-portal-gtk.service"]; }
       ];
 
       environment = {

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   imports = [
@@ -10,4 +10,8 @@
   home.sessionVariables = {
     VISUAL = "emacsclient";
   };
+
+  home.packages = with pkgs; [
+    pkgs-unstable.copilot-language-server
+  ];
 }

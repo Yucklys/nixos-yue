@@ -3,7 +3,6 @@
 {
   programs.qutebrowser = {
     enable = true;
-    package = pkgs.qutebrowser;
     # extraConfig = builtins.readFile ./config.py;
     loadAutoconfig = true;
     keyBindings = {
