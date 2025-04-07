@@ -16,6 +16,8 @@ in {
     settings = {
       # startup programs
       spawn-at-startup = [
+        # dbus update environment variables
+        { command = ["sh" "-c" "sleep 4; systemctl --user restart xdg-desktop-portal"]; }
         # enable the clipboard history
         { command = ["wl-paste" "--watch" "cliphist" "store"]; }
         # show wallpaper
@@ -26,6 +28,7 @@ in {
         { command = ["xwayland-satellite"]; }
         # restart fcitx5 session to refresh environment variables
         { command = ["fcitx5" "-r"]; }
+        { command = ["waybar"]; }
       ];
 
       environment = {

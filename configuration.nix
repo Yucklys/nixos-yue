@@ -208,6 +208,16 @@
   environment.sessionVariables = {
     FLAKE = "/home/yucklys/nixos-config"; # indicate flake.nix for nh
     NIXOS_OZONE_WL = "1"; # enable ozone for wayland
+    # xwayland-satellite will use Display 0 to run X11 applications
+    DISPLAY = ":0";
+    # GTK applications run on wayland, then x11, then any other GDK backend
+    GDK_BACKEND = "wayland,x11,*";
+    # SDL2 applications run on wayland by default
+    SDL_VIDEODRIVER = "wayland";
+    # QT applications run on wayland by default
+    QT_QPA_PLATFORM = "wayland;xcb";
+    # Force Clutter applications to use wayland
+    CLUTTER_BACKEND = "wayland";
   };
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -18,7 +18,7 @@
         enabled = true;
         default_model = {
           provider = "zed.dev";
-          model = "claude-3-7-sonnet";
+          model = "claude-3-7-sonnet-latest";
         };
       };
       buffer_font_family = "Maple Mono";
