@@ -5,9 +5,20 @@
     enable = true;
     package = pkgs-unstable.zed-editor;
 
-    extensions = ["nix" "toml"];
+    extensions = [
+      "nix"
+      "toml"
+      "dockerfile"
+      "make"
+      "justfile"
+    ];
 
     userSettings = {
+      theme = {
+        mode = "system";
+        dark = "Tokyo Night";
+        light = "Tokyo Night Light";
+      };
       load_direnv = "direct";
       base_keymap = "Emacs";
       node = {
@@ -22,6 +33,23 @@
         };
       };
       buffer_font_family = "Maple Mono";
+      edit_predictions.disabled_globs = [
+        "**/.env*"
+        "**/*.pem"
+        "**/*.key"
+        "**/*.cert"
+        "**/*.crt"
+        "**/.dev.vars"
+        "**/secrets.yml"
+      ];
+
+      # settings for vim mode
+      vim_mode = true;
+      vim = {
+        default_mode = "helix_normal";
+        toggle_relative_line_numbers = true;
+      };
+      relative_line_numbers = true;
     };
   };
 }

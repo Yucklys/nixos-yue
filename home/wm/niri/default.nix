@@ -78,16 +78,6 @@ in {
           scale = 1.6;
         };
 
-        # vertical monitor on the left
-        HDMI-A-1 = {
-          enable = true;
-          position = {
-            x = 0;
-            y = 0;
-          };
-          transform.rotation = 90;
-        };
-
         # horizontal monitor on the right
         DP-3 = {
           enable = true;
@@ -95,7 +85,7 @@ in {
             x = 2680;
             y = 800;
           };
-          scale = 2;
+          scale = 1.5;
         };
       };
 
@@ -176,11 +166,19 @@ in {
         {
           # goldendict is a centered and floating window
           matches = [ { app-id = "com/xiaoyifang/goldendict-ng.https://github."; } ];
-
           open-floating = true;
 
           default-column-width = { fixed = 500; };
           default-window-height = { fixed = 500; };
+        }
+        {
+          # general popups
+          matches = [
+            { title = "Open Folder"; } # zed editor file picker
+            { title = "Open File"; } # file picker
+            { title = "Save File"; } # file picker
+          ];
+          open-floating = true;
         }
       ];
 

@@ -1,6 +1,8 @@
 { config, pkgs, inputs, ... }:
 
-{
+let
+  defaultBrowser = "zen-beta.desktop";
+in {
   imports = [
     ./qutebrowser
   ];
@@ -8,17 +10,17 @@
   home.packages = with pkgs; [
     # nyxt
     # vivaldi
-    # inputs.zen-browser.packages."${system}".default
+    inputs.zen-browser.packages."${system}".default
   ];
 
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/html" = "qutebrowser.desktop";
-      "x-scheme-handler/http" = "qutebrowser.desktop";
-      "x-scheme-handler/https" = "qutebrowser.desktop";
-      "x-scheme-handler/about" = "qutebrowser.desktop";
-      "x-scheme-handler/unknown" = "qutebrowser.desktop";      
+      "text/html" = defaultBrowser;
+      "x-scheme-handler/http" = defaultBrowser;
+      "x-scheme-handler/https" = defaultBrowser;
+      "x-scheme-handler/about" = defaultBrowser;
+      "x-scheme-handler/unknown" = defaultBrowser;
     };
   };
 }
