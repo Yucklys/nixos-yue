@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, lib, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -15,16 +21,34 @@
     settings = {
       opener = {
         pdf = [
-          { run = ''zathura "$@"''; desc = "Open with zathura"; block = true; }
+          {
+            run = ''zathura "$@"'';
+            desc = "Open with zathura";
+            block = true;
+          }
         ];
         text = [
-	        { run = ''emacsclient -c "$@"''; desc = "Edit with emacs"; block = true; }
-	        { run = ''helix "$@"''; desc = "Edit with helix"; block = true; }
+          {
+            run = ''emacsclient -c "$@"'';
+            desc = "Edit with emacs";
+            block = true;
+          }
+          {
+            run = ''helix "$@"'';
+            desc = "Edit with helix";
+            block = true;
+          }
         ];
       };
       open.rules = [
-        { mime = "text/*"; use = "text"; }
-        { name = "*.pdf"; use = "pdf"; }
+        {
+          mime = "text/*";
+          use = "text";
+        }
+        {
+          name = "*.pdf";
+          use = "pdf";
+        }
       ];
     };
   };

@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   home.packages = [
@@ -6,6 +11,6 @@
   ];
 
   programs.niri.settings.spawn-at-startup = [
-    { command = ["swww-daemon"]; }
+    { command = [ "swww-daemon" ]; }
   ];
 }

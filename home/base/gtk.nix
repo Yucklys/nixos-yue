@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     lxappearance
   ];
-  
+
   gtk = {
     enable = true;
 

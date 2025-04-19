@@ -1,13 +1,13 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
     lshw
     glxinfo
   ];
-  
+
   # Tell Xorg to use the nvidia driver (also valid for Wayland)
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
 
@@ -30,9 +30,9 @@
   hardware.nvidia.prime = {
     # sync.enable = true;
     offload = {
-			enable = true;
-			enableOffloadCmd = true;
-		};
+      enable = true;
+      enableOffloadCmd = true;
+    };
 
     # Set by nixos-hardware
     # intelBusId = "PCI:0:2:0";

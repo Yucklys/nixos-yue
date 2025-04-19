@@ -14,8 +14,9 @@
       NotifyAccess = "exec";
       ExecStart = "${pkgs.maestral}/bin/maestral start -f";
       ExecStop = "${pkgs.maestral}/bin/maestral stop";
-      ExecStopPost = ''/usr/bin/env bash -c "if [ ''${SERVICE_RESULT} != success ]; \
-then notify-send Maestral 'Daemon failed'; fi"'';
+      ExecStopPost = ''
+        /usr/bin/env bash -c "if [ ''${SERVICE_RESULT} != success ]; \
+        then notify-send Maestral 'Daemon failed'; fi"'';
       WatchdogSec = "30s";
     };
   };

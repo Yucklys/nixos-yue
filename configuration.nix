@@ -5,25 +5,31 @@
 { pkgs, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./system-options.nix
-      ./hardware-configuration.nix
-      ./nvidia.nix
-      ./video.nix
-      # ./game.nix
-      ./vm.nix
-      ./ollama.nix
-      ./packages
-      ./dev
-    ];
-  
+  imports = [
+    # Include the results of the hardware scan.
+    ./system-options.nix
+    ./hardware-configuration.nix
+    ./nvidia.nix
+    ./video.nix
+    # ./game.nix
+    ./vm.nix
+    ./ollama.nix
+    ./packages
+    ./dev
+  ];
+
   # Enable Flake for Nix
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   # Auto hardlink, reduce disk usage but increase build time
   nix.settings.auto-optimise-store = false;
   # Add user to trusted users
-  nix.settings.trusted-users = [ "root" "@wheel" ];
+  nix.settings.trusted-users = [
+    "root"
+    "@wheel"
+  ];
 
   # Protect nix-shell against garbage collection
   nix.settings = {
@@ -33,7 +39,7 @@
     substituters = [
       "https://hyprland.cachix.org"
     ];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
 
   # Optimizing storage
@@ -45,14 +51,13 @@
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
-  
+
   # Allow some packages
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [
     (import inputs.emacs-overlay)
     inputs.niri.overlays.niri
   ];
-  
 
   # use the latest kernel
   boot.kernelPackages = pkgs.linuxPackages;
@@ -72,7 +77,7 @@
   };
 
   networking.hostName = "nixos"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "US/Central";
@@ -84,7 +89,7 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  
+
   console = {
     font = "${pkgs.terminus_font}/share/consolefonts/ter-v32n.psf.gz";
     # keyMap = "dvorak";
@@ -97,7 +102,8 @@
     enable = false;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     # make sure to also set the portal package, so that they are in sync
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   programs.niri = {
@@ -124,7 +130,7 @@
   ];
 
   # Enable PAM for swaylock
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
 
   # Authentication agent
   security.polkit.enable = true;
@@ -143,7 +149,7 @@
   #     };
   #   };
   # };
-  
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -169,15 +175,16 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yucklys = {
     isNormalUser = true;
-    extraGroups = [ "wheel"
-    		            "networkmanager"
-		                "audio"
-                    "video"
-                    "input"
-                    "docker"
-                    "dialout"
-		              ]; # Enable ‘sudo’ for the user.
-    
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "audio"
+      "video"
+      "input"
+      "docker"
+      "dialout"
+    ]; # Enable ‘sudo’ for the user.
+
     # Setting default shell for user
     shell = pkgs.nushell;
   };
@@ -204,7 +211,7 @@
     };
   };
 
-  environment.shells = [pkgs.nushell];
+  environment.shells = [ pkgs.nushell ];
   environment.sessionVariables = {
     FLAKE = "/home/yucklys/nixos-config"; # indicate flake.nix for nh
     NIXOS_OZONE_WL = "1"; # enable ozone for wayland
@@ -263,7 +270,10 @@
     # Sync local tracks with mobile
     allowedTCPPorts = [ 57621 ];
     # Enable discovery of other devices for Spotify
-    allowedUDPPorts = [ 5353 5354 ];    
+    allowedUDPPorts = [
+      5353
+      5354
+    ];
   };
 
   # Copy the NixOS configuration file and link it from the resulting system
@@ -279,4 +289,3 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
 }
-

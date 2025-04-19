@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   programs.foot = {
@@ -17,7 +22,7 @@
 
         # selection-foreground = "d8dee9";
         # selection-background = "4c566a";
-        
+
         regular0 = "3b4252";
         regular1 = "bf616a";
         regular2 = "a3be8c";

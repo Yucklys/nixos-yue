@@ -1,4 +1,4 @@
-{ config, pkgs, ... } :
+{ config, pkgs, ... }:
 
 let
   nuSampleConfig = "https://raw.githubusercontent.com/nushell/nushell/${pkgs.nushell.version}/crates/nu-utils/src/sample_config";

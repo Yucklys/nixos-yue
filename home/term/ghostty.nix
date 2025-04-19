@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   programs.ghostty = {
@@ -10,7 +15,7 @@
         # split controls
         "ctrl+a>h=new_split:right"
         "ctrl+a>v=new_split:down"
-        
+
         "ctrl+h=goto_split:left"
         "ctrl+s=goto_split:right"
 

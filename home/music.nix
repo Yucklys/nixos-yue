@@ -20,13 +20,12 @@ in
     musicDirectory = "${homeDir}/Music";
     playlistDirectory = "${dataDir}/playlists";
 
-    extraConfig =
-      ''
+    extraConfig = ''
       audio_output {
         type "pipewire"
         name "PipeWire Sound Server"
       }
-      '';
+    '';
   };
 
   # Connect MPD to MPRIS
@@ -66,7 +65,7 @@ in
         use_mpris = true;
         dbus_type = "session";
         device_name = "nix";
-        device_type = "computer";        
+        device_type = "computer";
       };
     };
   };

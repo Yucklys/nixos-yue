@@ -1,4 +1,11 @@
-{ config, pkgs, pkgs-unstable, inputs, lib, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  inputs,
+  lib,
+  ...
+}:
 
 let
   user = "yucklys";
@@ -40,7 +47,7 @@ in
 
   services.gnome-keyring = {
     enable = true;
-    components = ["secrets"];
+    components = [ "secrets" ];
   };
 
   services.blueman-applet.enable = true;

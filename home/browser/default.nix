@@ -1,8 +1,14 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   defaultBrowser = "zen-beta.desktop";
-in {
+in
+{
   imports = [
     ./qutebrowser
   ];

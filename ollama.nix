@@ -1,4 +1,7 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{
+  pkgs-unstable,
+  ...
+}:
 
 {
   services.ollama = {

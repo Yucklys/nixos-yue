@@ -1,9 +1,10 @@
 { config, pkgs, ... }:
 
 let
-  my-lua-with-packages = ps: with ps; [
-    
-  ];
+  my-lua-with-packages =
+    ps: with ps; [
+
+    ];
 in
 {
   environment.systemPackages = with pkgs; [

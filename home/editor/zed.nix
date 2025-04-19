@@ -1,4 +1,9 @@
-{ config, pkgs, pkgs-unstable, lib, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  lib,
+  ...
+}:
 
 {
   programs.zed-editor = {

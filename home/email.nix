@@ -13,7 +13,7 @@
       isDefault = true;
     };
   };
-  
+
   accounts.email.accounts = {
     umd = {
       primary = true;

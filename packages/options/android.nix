@@ -1,6 +1,11 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   programs.adb.enable = true;
-  users.users.yucklys.extraGroups = ["adbusers"];
+  users.users.yucklys.extraGroups = [ "adbusers" ];
 }

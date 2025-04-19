@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, lib, ... } :
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 let
   configDir = "~/.config";
@@ -8,7 +14,8 @@ let
   monitorRight = "DP-3";
   monitorMain = "eDP-1";
 in
-{ imports = [
+{
+  imports = [
     ./config.nix
   ];
 
@@ -21,7 +28,7 @@ in
   ];
 
   stylix.targets.hyprland.enable = true;
-  
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -42,9 +49,9 @@ in
         # Some default env vars.
         "GDK_SCALE,2"
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-         # GTK applications run on wayland, then x11, then any other GDK backend
+        # GTK applications run on wayland, then x11, then any other GDK backend
         "GDK_BACKEND,wayland,x11,*"
-         # SDL2 applications run on wayland by default
+        # SDL2 applications run on wayland by default
         "SDL_VIDEODRIVER,wayland"
         # QT applications run on wayland by default
         "QT_QPA_PLATFORM,wayland;xcb"
@@ -63,7 +70,7 @@ in
         # Enable wayland for goldendict
         "GOLDENDICT_FORCE_WAYLAND,1"
       ];
-      
+
       exec-once = [
         "dbus-update-activation-environment --systemd --all"
         "waybar"
@@ -72,7 +79,7 @@ in
         "keyctl link @u @s"
         "pypr"
       ];
-      
+
       xwayland = {
         force_zero_scaling = true;
       };
@@ -117,7 +124,7 @@ in
       animations = {
         enabled = true;
         bezier = "easeInOutCubic, 0.65, 0, 0.35, 1";
-        
+
         animation = [
           "windows, 1, 6, easeInOutCubic"
           "border, 1, 6, easeInOutCubic"
@@ -155,7 +162,7 @@ in
       "$mod" = "SUPER";
 
       # keybinds
-      bind = [ 
+      bind = [
         "$mod, return, exec, ghostty # open terminal"
         "$mod SHIFT, return, exec, ghostty"
         "$mod SHIFT, C, killactive,"
@@ -178,7 +185,7 @@ in
         "ALT, Tab, focuscurrentorlast"
         # "$mod, b, scroller:pin,"
         # "$mod SHIFT, b, scroller:unpin,"
-        
+
         # Workspace
         ''$mod, 1, ${focusWorkspaceMethod}, 1''
         ''$mod, 2, ${focusWorkspaceMethod}, 2''

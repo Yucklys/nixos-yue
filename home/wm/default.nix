@@ -2,7 +2,8 @@
 
 let
   wm = "niri";
-in {
+in
+{
   imports = [
     (./. + "/${wm}/default.nix")
   ];
@@ -67,58 +68,64 @@ in {
   };
 
   # System idle manager
-  services.hypridle = let
-    hyprland-settings = {
-      general = {
-        after_sleep_cmd = "hyprctl dispatch dpms on";
-        lock_cmd = "hyprlock";
-      };
+  services.hypridle =
+    let
+      hyprland-settings = {
+        general = {
+          after_sleep_cmd = "hyprctl dispatch dpms on";
+          lock_cmd = "hyprlock";
+        };
 
-      listener = [
-        {
-          timeout = 900;
-          on-timeout = "hyprlock";
-        }
-        {
-          timeout = 1200;
-          on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on";
-        }
-        {
-          timeout = 1800;
-          on-timeout = "systemctl suspend";
-        }
-      ];
-    };
-    niri-settings = {
-      general = {
-        before_sleep_cmd = "loginctl lock-session";
-        after_sleep_cmd = "niri msg action power-off-monitors";
-        lock_cmd = "pidof hyprlock || hyprlock";
+        listener = [
+          {
+            timeout = 900;
+            on-timeout = "hyprlock";
+          }
+          {
+            timeout = 1200;
+            on-timeout = "hyprctl dispatch dpms off";
+            on-resume = "hyprctl dispatch dpms on";
+          }
+          {
+            timeout = 1800;
+            on-timeout = "systemctl suspend";
+          }
+        ];
       };
+      niri-settings = {
+        general = {
+          before_sleep_cmd = "loginctl lock-session";
+          after_sleep_cmd = "niri msg action power-off-monitors";
+          lock_cmd = "pidof hyprlock || hyprlock";
+        };
 
-      listener = [
-        {
-          timeout = 900;
-          on-timeout = "hyprlock";
-        }
-        {
-          timeout = 1200;
-          on-timeout = "niri msg action power-off-monitors";
-          on-resume = "niri msg action power-on-monitors";
-        }
-        {
-          timeout = 1800;
-          on-timeout = "systemctl suspend";
-        }
-      ];      
+        listener = [
+          {
+            timeout = 900;
+            on-timeout = "hyprlock";
+          }
+          {
+            timeout = 1200;
+            on-timeout = "niri msg action power-off-monitors";
+            on-resume = "niri msg action power-on-monitors";
+          }
+          {
+            timeout = 1800;
+            on-timeout = "systemctl suspend";
+          }
+        ];
+      };
+    in
+    {
+      enable = true;
+      settings =
+        if wm == "hyprland" then
+          hyprland-settings
+        else if wm == "niri" then
+          niri-settings
+        else
+          { };
     };
-  in {
-    enable = true;
-    settings = if wm == "hyprland" then hyprland-settings
-               else if wm == "niri" then niri-settings
-               else {};
-  };
 
   systemd.user.services.hypridle.Unit.After = [ "graphical-session.target" ];
 }

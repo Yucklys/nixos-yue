@@ -30,4 +30,3 @@
   # Disable sound.enable due to conflict with PipeWire
   # sound.enable = false;
 }
-  
