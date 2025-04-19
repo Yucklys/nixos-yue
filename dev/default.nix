@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ pkgs-unstable, ... }:
 
 {
   imports = [
@@ -10,9 +10,10 @@
     # ./dafny.nix
     # ./haskell.nix
     ./lua.nix
+    ./nix.nix
   ];
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     pkgs-unstable.devenv
   ];
 }
