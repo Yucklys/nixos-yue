@@ -155,9 +155,9 @@
 				"format": "{icon} {temperatureC}°C",
 				"format-critical": " {temperatureC}°C",
 				"format-icons": [
-						"",
+						"",
 						"",
-						""
+						""
 				],
 				"interval": 4,
 				"max-length": 7,
