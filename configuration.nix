@@ -75,7 +75,7 @@
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-  time.timeZone = "US/Eastern";
+  time.timeZone = "US/Central";
   time.hardwareClockInLocalTime = true;
 
   # Configure network proxy if necessary
