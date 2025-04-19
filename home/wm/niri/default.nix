@@ -81,6 +81,11 @@ in {
         # horizontal monitor on the right
         DP-3 = {
           enable = true;
+          mode = {
+            height = 1440;
+            width = 3440;
+            refresh = 100.0;
+          };
           position = {
             x = 2680;
             y = 800;
