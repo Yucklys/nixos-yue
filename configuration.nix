@@ -165,7 +165,7 @@
     enable = true;
 
     touchpad.naturalScrolling = true;
-    mouse.naturalScrolling = false;
+    mouse.naturalScrolling = true;
   };
 
   # Enable bluetooth support
