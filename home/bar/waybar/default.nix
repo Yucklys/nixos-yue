@@ -35,7 +35,7 @@ in
         layer = "top";
         position = "top";
         height = height;
-        output = [ "eDP-1" ];
+        output = [ "DP-3" ];
         include = [ "/etc/nixos/home/bar/waybar/default-modules.json" ];
         modules-left = [
           "clock"
@@ -60,7 +60,7 @@ in
         layer = "top";
         position = "top";
         height = height;
-        output = [ "DP-3" ];
+        output = [ "eDP-1" ];
         include = [ "/etc/nixos/home/bar/waybar/default-modules.json" ];
         modules-left = [
           "clock"

@@ -1,9 +1,6 @@
 {
-  config,
   pkgs,
   pkgs-unstable,
-  inputs,
-  lib,
   ...
 }:
 
@@ -77,4 +74,8 @@ in
 
   # password store
   programs.password-store.enable = true;
+
+  # syncthing
+  services.syncthing.enable = true;
+  services.syncthing.tray.enable = true;
 }
