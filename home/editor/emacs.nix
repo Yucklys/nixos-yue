@@ -1,14 +1,17 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
 }:
 
 let
   emacs-package =
     with pkgs;
-    (emacsPackagesFor emacs-git-pgtk).emacsWithPackages (epkgs: [ epkgs.vterm ]);
+    (emacsPackagesFor emacs-git-pgtk).emacsWithPackages (epkgs: [
+      epkgs.vterm
+      (epkgs.treesit-grammars.with-grammars (grammars: [
+        grammars.tree-sitter-nu
+      ]))
+    ]);
 in
 {
   home.packages = with pkgs; [
