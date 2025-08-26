@@ -103,7 +103,7 @@ in
         };
 
         # horizontal monitor on the right
-        DP-3 = {
+        HDMI-A-1 = {
           enable = true;
           mode = {
             height = 1440;
@@ -114,7 +114,7 @@ in
             x = 2680;
             y = 800;
           };
-          scale = 1.5;
+          scale = 1;
         };
       };
 

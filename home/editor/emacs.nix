@@ -11,6 +11,7 @@ let
       (epkgs.treesit-grammars.with-grammars (grammars: [
         grammars.tree-sitter-nu
       ]))
+      epkgs.jinx
     ]);
 in
 {

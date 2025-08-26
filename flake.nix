@@ -33,7 +33,7 @@
     };
 
     niri.url = "github:sodiboo/niri-flake";
-    swww.url = "github:LGFae/swww";
+    swww.url = "github:LGFae/swww?rev=44d3cdf82669c2bd7ea31cee3c158a838df1b5e4";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };

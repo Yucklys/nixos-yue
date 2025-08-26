@@ -31,6 +31,7 @@ in
 
   home.sessionVariables = {
     FLAKE = "/home/${user}/niri-config";
+    THEME = "dark";
   };
 
   programs.home-manager.enable = true;
