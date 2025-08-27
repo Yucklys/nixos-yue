@@ -6,6 +6,19 @@
     glxinfo
   ];
 
+  # CUDA environment variables
+  environment.sessionVariables = {
+    CUDA_HOME = "${pkgs.cudaPackages.cudatoolkit}";
+    LD_LIBRARY_PATH = lib.makeLibraryPath [
+      "${pkgs.cudaPackages.cudatoolkit}"
+      "${pkgs.cudaPackages.cudatoolkit}/lib64"
+      pkgs.cudaPackages.cudnn
+      pkgs.cudaPackages.cuda_cudart
+      pkgs.stdenv.cc.cc.lib
+    ];
+    CUDA_MODULE_LOADING = "LAZY";
+  };
+
   # Tell Xorg to use the nvidia driver (also valid for Wayland)
   services.xserver.videoDrivers = [ "nvidia" ];
 

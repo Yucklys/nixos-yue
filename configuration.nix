@@ -11,7 +11,7 @@
     ./hardware-configuration.nix
     ./nvidia.nix
     ./video.nix
-    # ./game.nix
+    ./game.nix
     ./vm.nix
     ./ollama.nix
     ./packages

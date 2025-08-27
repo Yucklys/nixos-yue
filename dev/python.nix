@@ -34,6 +34,7 @@ let
       python-lsp-server
       radian # ipython for R
       pip
+      huggingface-hub
     ];
 in
 {
