@@ -214,7 +214,7 @@
 
   environment.shells = [ pkgs.nushell ];
   environment.sessionVariables = {
-    FLAKE = "/home/yucklys/nixos-config"; # indicate flake.nix for nh
+    NH_FLAKE = "/home/yucklys/nixos-config"; # indicate flake.nix for nh
     THEME = "dark"; # System theme variant
     NIXOS_OZONE_WL = "1"; # enable ozone for wayland
     # xwayland-satellite will use Display 0 to run X11 applications

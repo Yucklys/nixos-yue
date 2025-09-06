@@ -5,10 +5,12 @@
   # Now using ags-shell as notification daemon
   services.mako = {
     enable = true;
-    anchor = "top-right";
-    # backgroundColor = "#2E3440";
-    margin = "20,20";
-    defaultTimeout = 5000;
+    settings = {
+      anchor = "top-right";
+      # backgroundColor = "#2E3440";
+      margin = "20,20";
+      default-timeout = 5000;
+    };
   };
 
   # Periodic rest notification

@@ -30,7 +30,7 @@ in
   home.stateVersion = "23.05";
 
   home.sessionVariables = {
-    FLAKE = "/home/${user}/niri-config";
+    NH_FLAKE = "/home/${user}/niri-config";
     THEME = "dark";
   };
 

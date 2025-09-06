@@ -14,5 +14,4 @@
   };
 
   services.open-webui.enable = true;
-  services.open-webui.package = pkgs-unstable.open-webui;
 }

@@ -20,6 +20,3 @@ $env.LSP_USE_PLISTS = true
 # Zellij
 $env.ZELLIJ_AUTO_ATTACH = true
 $env.ZELLIJ_AUTO_EXIT = true
-
-# Flake
-$env.FLAKE = $"/home/($env.user)/nixos-config";
