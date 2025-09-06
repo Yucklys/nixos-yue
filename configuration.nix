@@ -116,9 +116,10 @@
     fira-code
     wqy_microhei
     wqy_zenhei
-    nerdfonts
-    maple-mono-SC-NF
-    maple-mono
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    maple-mono.NF-CN
+    maple-mono.woff2
     font-awesome
     symbola
     noto-fonts
@@ -205,7 +206,7 @@
         name = "Noto Sans";
       };
       monospace = {
-        package = pkgs.maple-mono-SC-NF;
+        package = pkgs.maple-mono.NF-CN;
         name = "Maple Mono SC NF";
       };
     };
@@ -214,6 +215,7 @@
   environment.shells = [ pkgs.nushell ];
   environment.sessionVariables = {
     FLAKE = "/home/yucklys/nixos-config"; # indicate flake.nix for nh
+    THEME = "dark"; # System theme variant
     NIXOS_OZONE_WL = "1"; # enable ozone for wayland
     # xwayland-satellite will use Display 0 to run X11 applications
     DISPLAY = ":0";

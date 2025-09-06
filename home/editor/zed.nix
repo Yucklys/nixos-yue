@@ -19,11 +19,6 @@
     ];
 
     userSettings = {
-      theme = {
-        mode = "system";
-        dark = "Tokyo Night";
-        light = "Tokyo Night Light";
-      };
       load_direnv = "direct";
       base_keymap = "Emacs";
       node = {
@@ -37,7 +32,6 @@
           model = "claude-3-7-sonnet-latest";
         };
       };
-      buffer_font_family = "Maple Mono";
       edit_predictions.disabled_globs = [
         "**/.env*"
         "**/*.pem"

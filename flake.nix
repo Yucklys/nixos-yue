@@ -2,14 +2,14 @@
   description = "Yucklys NixOS with Flakes";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     emacs-overlay.url = "github:nix-community/emacs-overlay";
 
-    stylix.url = "github:danth/stylix/release-24.11";
+    stylix.url = "github:nix-community/stylix/release-25.05";
 
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
@@ -33,7 +33,7 @@
     };
 
     niri.url = "github:sodiboo/niri-flake";
-    swww.url = "github:LGFae/swww?rev=44d3cdf82669c2bd7ea31cee3c158a838df1b5e4";
+    swww.url = "github:LGFae/swww";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };

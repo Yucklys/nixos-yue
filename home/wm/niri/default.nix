@@ -19,6 +19,7 @@ in
   ];
 
   programs.niri = {
+    package = pkgs.niri-stable;
     settings = {
       # startup programs
       spawn-at-startup = [
@@ -88,7 +89,7 @@ in
         };
 
         # make the mouse warp to the center of newly focused windows
-        warp-mouse-to-focus = true;
+        warp-mouse-to-focus.enable = true;
       };
 
       outputs = {
@@ -115,6 +116,7 @@ in
             y = 800;
           };
           scale = 1;
+          focus-at-startup = true;
         };
       };
 
