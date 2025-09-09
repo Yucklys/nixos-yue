@@ -21,8 +21,12 @@
         "P" = "search-prev";
       };
     };
+    searchEngines = {
+      DEFAULT = "https://www.google.com/search?q={}";
+      d = "https://duckduckgo.com/?q={}";
+      gh = "https://github.com/search?q={}";
+    };
   };
 
-  # do not use stylix theme
   stylix.targets.qutebrowser.enable = true;
 }

@@ -63,8 +63,15 @@
   boot.kernelPackages = pkgs.linuxPackages;
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      devices = [ "nodev" ];
+      efiSupport = true;
+      useOSProber = true;
+    };
+  };
 
   # Register AppImage as regular binary
   boot.binfmt.registrations.appimage = {
@@ -256,15 +263,18 @@
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time";
-        user = "greeter";
-      };
-    };
-  };
+  # Laptop behavior
+  services.logind.lidSwitch = "suspend-then-hibernate";
+  services.logind.powerKey = "hibernate";
+  services.logind.powerKeyLongPress = "poweroff";
+
+  systemd.sleep.extraConfig = ''
+  HibernateDelaySec=1h
+  SuspendState=mem
+  '';
+
+  # Display manager
+  services.displayManager.ly.enable = true;
 
   # Open ports in the firewall.
   networking.firewall = {

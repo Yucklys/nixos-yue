@@ -6,7 +6,7 @@
 }:
 
 let
-  defaultBrowser = "zen-beta.desktop";
+  defaultBrowser = "qutebrowser.desktop";
 in
 {
   imports = [

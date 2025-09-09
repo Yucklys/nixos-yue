@@ -23,6 +23,14 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  # Enable hibernation
+  boot.kernelParams = [
+    "resume_offset=25608192" # swap file offset
+    "mem_sleep_default=deep" # suspend first
+  ];
+  boot.resumeDevice = "/dev/disk/by-uuid/eef5af0e-bfa8-4609-bb14-39e5adc3f3b3";
+  powerManagement.enable = true;
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/eef5af0e-bfa8-4609-bb14-39e5adc3f3b3";
     fsType = "ext4";
@@ -39,11 +47,16 @@
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/7639-5FE9";
+    device = "/dev/disk/by-uuid/7B90-0E1D";
     fsType = "vfat";
   };
 
-  swapDevices = [ ];
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 32 * 1024; # 32GB in MB
+    }
+  ];
 
   # Increase desktop performance
   services.tlp.settings = {
