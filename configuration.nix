@@ -227,7 +227,7 @@
     # xwayland-satellite will use Display 0 to run X11 applications
     DISPLAY = ":0";
     # GTK applications run on wayland, then x11, then any other GDK backend
-    GDK_BACKEND = "wayland,x11,*";
+    # GDK_BACKEND = "wayland,x11,*";
     # SDL2 applications run on wayland by default
     SDL_VIDEODRIVER = "wayland";
     # QT applications run on wayland by default

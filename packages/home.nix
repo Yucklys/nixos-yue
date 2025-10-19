@@ -23,8 +23,6 @@
     pavucontrol # audio control
     rustdesk # remote desktop
     via # keyboard configurator
-    discord # chat client
-    telegram-desktop # chat client
     zoom-us # video conferencing
     rofi-rbw-wayland # rofi frontend for rbw
     nautilus # GUI file manager
@@ -32,6 +30,11 @@
     hunspell # spell checker
     hunspellDicts.en_US # English dictionary
     bruno # API testing tool
+
+    # messaging
+    discord # chat client
+    telegram-desktop # chat client
+    wechat
 
     # file extension
     file-roller # archive manager

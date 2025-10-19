@@ -10,8 +10,11 @@ let
       epkgs.vterm
       (epkgs.treesit-grammars.with-grammars (grammars: [
         grammars.tree-sitter-nu
+        grammars.tree-sitter-tsx
+        grammars.tree-sitter-typescript
       ]))
       epkgs.jinx
+      epkgs.lsp-bridge
     ]);
 in
 {

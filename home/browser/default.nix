@@ -16,6 +16,7 @@ in
   home.packages = with pkgs; [
     # nyxt
     # vivaldi
+    google-chrome
     inputs.zen-browser.packages."${system}".default
   ];
 

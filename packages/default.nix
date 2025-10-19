@@ -23,6 +23,7 @@
     keyutils
     xdg-utils
     git
+    gcc
 
     # tools
     fd # find replacement
