@@ -384,10 +384,10 @@ in
           "Mod+Shift+Space".action = switch-layout "prev";
 
           # screenshot & screencast
-          "Print".action = screenshot;
-          "Ctrl+Print".action = sh ''niri msg action screenshot-screen'';
+          "Print".action.screenshot = [];
+          "Ctrl+Print".action.screenshot-screen = [];
           # "Ctrl+Print".action = screenshot-screen;
-          "Alt+Print".action = screenshot-window;
+          "Alt+Print".action.screenshot-window = [];
 
           # Applications
           # emacs shortcuts

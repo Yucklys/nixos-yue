@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ pkgs, inputs, ... }:
+{ pkgs, pkgs-unstable, inputs, ... }:
 
 {
   imports = [
@@ -276,6 +276,7 @@
   # Display manager
   services.displayManager.ly = {
     enable = true;
+    package = pkgs-unstable.ly;
     settings = {
       animation = "gameoflife";
     };
