@@ -16,7 +16,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # essentials
-    helix # terminal modal editor
     wget
     ripgrep
     coreutils

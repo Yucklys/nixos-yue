@@ -1,6 +1,4 @@
 {
-  config,
-  pkgs,
   pkgs-unstable,
   ...
 }:
@@ -10,13 +8,14 @@
     ./emacs.nix
     # ./vscode.nix
     ./zed.nix
+    ./helix.nix
   ];
 
   home.sessionVariables = {
     VISUAL = "emacsclient";
   };
 
-  home.packages = with pkgs; [
+  home.packages = [
     pkgs-unstable.copilot-language-server
   ];
 }
