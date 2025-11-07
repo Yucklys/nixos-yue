@@ -44,5 +44,8 @@
 
     # frontends
     wofi-pass # wofi frontend for pass
+
+    # cli tools
+    claude-code
   ];
 }

@@ -47,12 +47,7 @@ in
         # xwayland support
         { command = [ "xwayland-satellite" ]; }
         # restart fcitx5 session to refresh environment variables
-        {
-          command = [
-            "fcitx5"
-            "-r"
-          ];
-        }
+        { command = [ "fcitx5" "-d"]; }
         { command = [ "waybar" ]; }
       ];
 

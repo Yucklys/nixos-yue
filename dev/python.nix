@@ -35,6 +35,8 @@ let
       radian # ipython for R
       pip
       huggingface-hub
+      watchdog
+      packaging
     ];
 in
 {

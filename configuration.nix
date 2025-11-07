@@ -274,7 +274,12 @@
   '';
 
   # Display manager
-  services.displayManager.ly.enable = true;
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      animation = "gameoflife";
+    };
+  };
 
   # Open ports in the firewall.
   networking.firewall = {
