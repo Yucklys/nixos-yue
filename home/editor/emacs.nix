@@ -6,7 +6,7 @@
 let
   emacs-package =
     with pkgs;
-    (emacsPackagesFor emacs-git-pgtk).emacsWithPackages (epkgs: [
+    (emacsPackagesFor emacs-pgtk).emacsWithPackages (epkgs: [
       epkgs.vterm
       (epkgs.treesit-grammars.with-grammars (grammars: [
         grammars.tree-sitter-nu
