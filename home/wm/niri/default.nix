@@ -18,13 +18,6 @@ in
     (pkgs.writeShellScriptBin "niri-goto-window" ''nu "${inputs.self}/scripts/niri-goto-window.nu"'')
   ];
 
-  systemd.user.sessionVariables = {
-    DISPLAY = ":0";
-    WAYLAND_DISPLAY = "wayland-1";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_CURRENT_DESKTOP = "niri";
-  };
-
   programs.niri = {
     package = pkgs.niri-stable;
     settings = {

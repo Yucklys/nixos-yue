@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ pkgs, pkgs-unstable, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -65,11 +65,21 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
     efi.canTouchEfiVariables = true;
-    grub = {
+    limine = {
       enable = true;
-      devices = [ "nodev" ];
-      efiSupport = true;
-      useOSProber = true;
+      extraEntries = ''
+/Windows
+  protocol: efi
+  path: uuid(34e9ff78-f747-4c92-91ce-89b23bfb63cd):/EFI/Microsoft/Boot/bootmgfw.efi
+'';
+      extraConfig = ''
+term_palette: 303446;e78284;a6d189;e5c890;8caaee;f4b8e4;81c8be;c6d0f5
+term_palette_bright: 626880;e78284;a6d189;e5c890;8caaee;f4b8e4;81c8be;c6d0f5
+term_background: 303446
+term_foreground: c6d0f5
+term_background_bright: 626880
+term_foreground_bright: c6d0f5
+'';
     };
   };
 
@@ -276,9 +286,9 @@
   # Display manager
   services.displayManager.ly = {
     enable = true;
-    package = pkgs-unstable.ly;
     settings = {
-      animation = "gameoflife";
+      animation = "matrix";
+      clock = "%c";
     };
   };
 
