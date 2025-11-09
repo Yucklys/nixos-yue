@@ -18,7 +18,6 @@
     coreutils
     keyutils
     xdg-utils
-    git
     gcc
 
     # tools

@@ -22,6 +22,7 @@ in
     ./email.nix
     ./dropbox.nix
     ./fix.nix
+    ./vc.nix
   ];
 
   home.username = "${user}";
@@ -62,17 +63,6 @@ in
   # pdf viewer
   programs.zathura.enable = true;
   stylix.targets.zathura.enable = true;
-
-  # git setting
-  programs.git = {
-    enable = true;
-    userName = "yucklys";
-    userEmail = "yucklys687@outlook.com";
-    extraConfig = {
-      init.defaultBranch = "main";
-      safe.directory = "/etc/nixos";
-    };
-  };
 
   # password store
   programs.password-store.enable = true;
