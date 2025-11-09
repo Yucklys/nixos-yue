@@ -224,7 +224,7 @@ term_foreground_bright: c6d0f5
       };
       monospace = {
         package = pkgs.maple-mono.NF-CN;
-        name = "Maple Mono SC NF";
+        name = "Maple Mono NF CN";
       };
     };
   };

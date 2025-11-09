@@ -52,7 +52,6 @@ in
       };
 
       input-field = {
-        monitor = "eDP-1";
         size = "200, 50";
         position = "0, -80";
         dots_center = true;

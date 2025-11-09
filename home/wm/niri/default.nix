@@ -6,7 +6,7 @@
 }:
 
 let
-  terminal = "ghostty";
+  terminal = "foot";
 in
 {
   imports = [
@@ -394,7 +394,7 @@ in
           # emacs shortcuts
           "Mod+E".action = spawn "emacsclient" "-c";
           # yazi file manager
-          "Mod+Ctrl+E".action = spawn "ghostty" "-e" "yazi";
+          "Mod+Ctrl+E".action = spawn terminal "-e" "yazi";
           # goldendict
           "Mod+G".action = spawn "goldendict";
           # wallpaper

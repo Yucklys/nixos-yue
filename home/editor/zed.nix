@@ -29,7 +29,7 @@
         enabled = true;
         default_model = {
           provider = "zed.dev";
-          model = "claude-3-7-sonnet-latest";
+          model = "claude-4-5-sonnet-latest";
         };
       };
       edit_predictions.disabled_globs = [
@@ -42,12 +42,8 @@
         "**/secrets.yml"
       ];
 
-      # settings for vim mode
-      vim_mode = true;
-      vim = {
-        default_mode = "helix_normal";
-        toggle_relative_line_numbers = true;
-      };
+      # settings for helix mode
+      helix_mode = true;
       relative_line_numbers = true;
     };
   };

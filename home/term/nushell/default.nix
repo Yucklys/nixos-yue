@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
   # Nushell for alternative user shell
@@ -31,4 +31,7 @@
 
   # Use nushell default ls command
   programs.eza.enable = false;
+
+  # Enable stylix
+  stylix.targets.nushell.enable = true;
 }

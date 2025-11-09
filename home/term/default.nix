@@ -1,7 +1,4 @@
 {
-  config,
-  pkgs,
-  inputs,
   lib,
   ...
 }:
@@ -11,7 +8,7 @@
     ./nushell
     ./zellij.nix
     ./foot.nix
-    ./ghostty.nix
+    # ./ghostty.nix
     # ./wezterm
   ];
 
@@ -52,18 +49,25 @@
       ];
     };
   };
+  stylix.targets.yazi.enable = true;
 
   # Shell configuration
   programs.starship = {
     enable = true;
     settings = builtins.fromTOML (builtins.readFile ./starship.toml);
   };
+  stylix.targets.starship.enable = true;
 
   # Zoxide auto jump
   programs.zoxide.enable = true;
 
   # Alternative to cat
   programs.bat.enable = true;
+  stylix.targets.bat.enable = true;
+
+  # fuzzy search tool
+  programs.fzf.enable = true;
+  stylix.targets.fzf.enable = true;
 
   # Better command history
   programs.atuin.enable = true;

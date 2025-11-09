@@ -1,15 +1,21 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 let
   dataDir = "${config.xdg.configHome}/mpd";
   homeDir = config.home.homeDirectory;
 in
 {
+  imports = [
+    inputs.spicetify-nix.homeManagerModules.spicetify
+  ];
+  
   home.packages = with pkgs; [
     mpc-cli
     playerctl
-    spotify
   ];
+  
+  programs.spicetify.enable = true;
+  stylix.targets.spicetify.enable = true;
 
   # Start MPD service
   services.mpd = {

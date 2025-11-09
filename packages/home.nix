@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   pkgs-unstable,
   ...
@@ -10,7 +8,7 @@
   # User packages
   home.packages = with pkgs; [
     # utils
-    htop # system monitor
+    btop # system monitor
     yt-dlp # youtube-dl fork
     ffmpeg # video processing
     wl-clipboard # copy & paste utilities

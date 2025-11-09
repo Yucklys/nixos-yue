@@ -34,7 +34,6 @@
     brightnessctl # control screen brightness
     pandoc # document converter
     appimage-run # run appimage in nix
-    fzf # fuzzy finder
 
     # libraries
     librime # library for rime input method

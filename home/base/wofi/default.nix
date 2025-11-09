@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   programs.wofi = {
@@ -6,7 +6,7 @@
     # style = builtins.readFile ./style.css;
     settings = {
       insensitive = true;
-      matching = "fuzzy";
+      matching = "contains";
     };
   };
 

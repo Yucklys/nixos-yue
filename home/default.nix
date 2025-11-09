@@ -61,6 +61,7 @@ in
 
   # pdf viewer
   programs.zathura.enable = true;
+  stylix.targets.zathura.enable = true;
 
   # git setting
   programs.git = {
