@@ -44,6 +44,6 @@
     wofi-pass # wofi frontend for pass
 
     # cli tools
-    claude-code
+    pkgs-unstable.claude-code
   ];
 }

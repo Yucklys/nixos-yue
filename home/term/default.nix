@@ -8,6 +8,7 @@
     ./nushell
     ./zellij.nix
     ./foot.nix
+    ./tmux.nix
     # ./ghostty.nix
     # ./wezterm
   ];
