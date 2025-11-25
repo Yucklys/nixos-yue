@@ -1,13 +1,30 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
     gamescopeSession.enable = true;
   };
-  programs.gamescope.enable = true;
+
+  # Gamescope can function as a minimal desktop environment
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
+
+  hardware.xone.enable = true;
+
+  services.getty.autologinUser = "yucklys";
+
+  environment = {
+    systemPackages = [pkgs.mangohud];
+    loginShellInit = ''
+[[ "$(tty)" = "/dev/tty1" ]] && ./gs.sh
+  '';
+  };
 
   programs.gamemode.enable = true;
 

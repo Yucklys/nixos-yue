@@ -21,6 +21,7 @@ set -g @catppuccin_window_status_style "slanted"
     ];
 
     extraConfig = ''
+set -g mouse on
 # use - and \ to split horizontally and vertically
 unbind %
 unbind '"'

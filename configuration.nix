@@ -210,7 +210,7 @@ term_foreground_bright: c6d0f5
   stylix = {
     enable = true;
     image = ./wallpapers/ign_legendary.png;
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/twilight.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     base16Scheme = ./themes/ef-winter-base16.yaml;
     polarity = "dark";
     fonts = {
