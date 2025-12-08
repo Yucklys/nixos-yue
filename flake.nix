@@ -2,14 +2,14 @@
   description = "Yucklys NixOS with Flakes";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     emacs-overlay.url = "github:nix-community/emacs-overlay";
 
-    stylix.url = "github:nix-community/stylix/release-25.05";
+    stylix.url = "github:nix-community/stylix/release-25.11";
 
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
@@ -33,7 +33,7 @@
     };
 
     niri.url = "github:sodiboo/niri-flake";
-    swww.url = "github:LGFae/swww/v0.11.2";
+    awww.url = "git+https://codeberg.org/LGFae/awww";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
@@ -75,7 +75,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
+              home-manager.backupFileExtension = "hm-backup";
               home-manager.users.yucklys.imports = [
                 ./home
               ];

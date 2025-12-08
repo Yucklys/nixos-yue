@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     lshw
-    glxinfo
+    mesa-demos
   ];
 
   # CUDA environment variables

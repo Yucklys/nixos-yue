@@ -1,18 +1,12 @@
 {
-  config,
   pkgs,
   inputs,
-  lib,
   ...
 }:
 
 let
-  configDir = "~/.config";
   # XMonad style: focusworkspaceoncurrentmonitor
   focusWorkspaceMethod = "focusworkspaceoncurrentmonitor";
-  monitorLeft = "HDMI-A-1";
-  monitorRight = "DP-3";
-  monitorMain = "eDP-1";
 in
 {
   imports = [
@@ -20,7 +14,7 @@ in
   ];
 
   home.packages = with pkgs; [
-    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+    inputs.hyprland-contrib.packages.${stdenv.hostPlatform.system}.grimblast
     hyprpaper
     hyprpicker
     pyprland
@@ -33,7 +27,7 @@ in
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     plugins = with pkgs.hyprlandPlugins; [
-      #inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors
+      #inputs.hypr-dynamic-cursors.packages.${stdenv.hostPlatform.system}.hypr-dynamic-cursors
     ];
     xwayland.enable = true;
     settings = {

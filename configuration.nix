@@ -67,6 +67,7 @@
     efi.canTouchEfiVariables = true;
     limine = {
       enable = true;
+      # secureBoot.enable = true;
       extraEntries = ''
 /Windows
   protocol: efi
@@ -141,7 +142,7 @@ term_foreground_bright: c6d0f5
     symbola
     noto-fonts
     noto-fonts-cjk-sans
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     hanazono
     lxgw-wenkai
     nanum
@@ -189,6 +190,11 @@ term_foreground_bright: c6d0f5
   # Enable bluetooth support
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+
+  # Enable angrr for direnv gc
+  services.angrr.enable = true;
+  services.angrr.enableNixGcIntegration = true;
+  
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yucklys = {
@@ -274,9 +280,11 @@ term_foreground_bright: c6d0f5
   services.upower.enable = true;
 
   # Laptop behavior
-  services.logind.lidSwitch = "suspend-then-hibernate";
-  services.logind.powerKey = "hibernate";
-  services.logind.powerKeyLongPress = "poweroff";
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend-then-hibernate";
+    HandlePowerKey = "hibernate";
+    HandlePowerKeyLongPress = "poweroff";
+  };
 
   systemd.sleep.extraConfig = ''
   HibernateDelaySec=1h
@@ -287,7 +295,7 @@ term_foreground_bright: c6d0f5
   services.displayManager.ly = {
     enable = true;
     settings = {
-      animation = "matrix";
+      animation = "gameoflife";
       clock = "%c";
     };
   };

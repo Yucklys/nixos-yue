@@ -18,6 +18,6 @@
   };
 
   home.packages = with pkgs; [
-    inputs.hyprpanel.packages.${pkgs.system}.default
+    inputs.hyprpanel.packages.${stdenv.hostPlatform.system}.default
   ];
 }

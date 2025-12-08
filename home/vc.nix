@@ -11,15 +11,21 @@ in
   
   programs.git = {
     enable = true;
-    userName = name;
-    userEmail = email;
-    delta.enable = true;
-    extraConfig = {
+    settings = {
+      user = {
+        name = name;
+        email = email;
+      };
       merge.conflictStyle = "zdiff3";
-      delta.navigate = true;
       init.defaultBranch = "main";
       safe.directory = "/etc/nixos";
     };
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    enableJujutsuIntegration = true;
   };
 
   programs.jujutsu = {
@@ -28,11 +34,6 @@ in
       user = {
         email = email;
         name = name;
-      };
-      ui = {
-        pager = "delta";
-        diff-formatter = ":git";
-        conflict-marker-style = "git";
       };
     };
   };

@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -27,6 +25,7 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
+    radian # ipython for R
     R-packages
     Rstudio-packages
   ];

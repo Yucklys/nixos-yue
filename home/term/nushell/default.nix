@@ -25,7 +25,7 @@
   programs.zoxide.enableNushellIntegration = true;
   programs.starship.enableNushellIntegration = true;
   programs.yazi.enableNushellIntegration = true;
-  programs.carapace.enableNushellIntegration = true;
+  programs.carapace.enableNushellIntegration = false;
   # Disable temporary due to Nushell 0.92.0 compatibility issue
   programs.atuin.enableNushellIntegration = true;
 

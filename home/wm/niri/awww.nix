@@ -6,10 +6,10 @@
 
 {
   home.packages = [
-    inputs.swww.packages.${pkgs.system}.swww
+    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
   ];
 
   programs.niri.settings.spawn-at-startup = [
-    { command = [ "swww-daemon" ]; }
+    { command = [ "awww-daemon" ]; }
   ];
 }

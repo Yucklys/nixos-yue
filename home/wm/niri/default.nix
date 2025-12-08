@@ -10,7 +10,7 @@ let
 in
 {
   imports = [
-    ./swww.nix
+    ./awww.nix
   ];
 
   home.packages = [

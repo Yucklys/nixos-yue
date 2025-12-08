@@ -1,12 +1,11 @@
 {
-  config,
   pkgs,
   inputs,
   ...
 }:
 
 let
-  defaultBrowser = "qutebrowser.desktop";
+  defaultBrowser = "zen-browser.desktop";
 in
 {
   imports = [
@@ -17,7 +16,7 @@ in
     # nyxt
     # vivaldi
     google-chrome
-    inputs.zen-browser.packages."${system}".default
+    inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
   ];
 
   xdg.mimeApps = {

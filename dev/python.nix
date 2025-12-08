@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   pkgs-unstable,
   ...
@@ -32,7 +31,6 @@ let
       pkgs-unstable.aider-chat
       # LSP
       python-lsp-server
-      radian # ipython for R
       pip
       huggingface-hub
       watchdog

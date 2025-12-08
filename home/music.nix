@@ -10,7 +10,7 @@ in
   ];
   
   home.packages = with pkgs; [
-    mpc-cli
+    mpc
     playerctl
   ];
   

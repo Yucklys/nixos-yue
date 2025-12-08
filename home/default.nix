@@ -21,7 +21,7 @@ in
     ./music.nix
     ./email.nix
     ./dropbox.nix
-    ./fix.nix
+    # ./fix.nix
     ./vc.nix
   ];
 
