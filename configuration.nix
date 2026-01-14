@@ -197,6 +197,11 @@ term_foreground_bright: c6d0f5
   
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Enable access to HID devices for WebHID API
+  services.udev.extraRules = ''
+    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="input"
+  '';
+
   users.users.yucklys = {
     isNormalUser = true;
     extraGroups = [
@@ -207,7 +212,7 @@ term_foreground_bright: c6d0f5
       "input"
       "docker"
       "dialout"
-    ]; # Enable ‘sudo’ for the user.
+    ]; # Enable 'sudo' for the user.
 
     # Setting default shell for user
     shell = pkgs.nushell;

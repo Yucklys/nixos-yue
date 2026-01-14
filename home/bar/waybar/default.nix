@@ -47,7 +47,7 @@ in
           workspaces
           window
         ];
-        modules-center = [ "mpris" ];
+        modules-center = [ ];
         modules-right = [
           "cpu"
           "temperature"

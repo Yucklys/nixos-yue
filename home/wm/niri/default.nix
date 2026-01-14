@@ -233,7 +233,7 @@ in
           "Mod+Shift+Slash".action = show-hotkey-overlay;
 
           "Mod+Return".action = spawn terminal "-e" "tmux";
-          "Mod+D".action = spawn "wofi" "--show" "drun";
+          "Mod+Space".action = spawn "wofi" "--show" "drun";
           "Super+Alt+L".action = spawn "hyprlock";
 
           # media control
@@ -253,18 +253,18 @@ in
           "Mod+Right".action = focus-column-or-monitor-right;
           "Mod+Down".action = focus-window-or-monitor-down;
           "Mod+Up".action = focus-window-or-monitor-up;
-          "Mod+H".action = focus-column-or-monitor-left;
-          "Mod+S".action = focus-column-or-monitor-right;
-          "Mod+N".action = focus-window-or-monitor-down;
+          "Mod+D".action = focus-column-or-monitor-left;
+          "Mod+N".action = focus-column-or-monitor-right;
+          "Mod+h".action = focus-window-or-monitor-down;
           "Mod+T".action = focus-window-or-monitor-up;
 
           "Mod+Shift+Left".action = move-column-left-or-to-monitor-left;
           "Mod+Shift+Right".action = move-column-right-or-to-monitor-right;
           "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
           "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
-          "Mod+Shift+H".action = move-column-left-or-to-monitor-left;
-          "Mod+Shift+S".action = move-column-right-or-to-monitor-right;
-          "Mod+Shift+N".action = move-window-down-or-to-workspace-down;
+          "Mod+Shift+D".action = move-column-left-or-to-monitor-left;
+          "Mod+Shift+N".action = move-column-right-or-to-monitor-right;
+          "Mod+Shift+H".action = move-window-down-or-to-workspace-down;
           "Mod+Shift+T".action = move-window-up-or-to-workspace-up;
 
           "Mod+Home".action = focus-column-first;
@@ -381,8 +381,8 @@ in
           "Mod+Ctrl+Apostrophe".action = toggle-window-floating;
 
           # switch layouts
-          "Mod+Space".action = switch-layout "next";
-          "Mod+Shift+Space".action = switch-layout "prev";
+          "Mod+S".action = switch-layout "next";
+          "Mod+Shift+S".action = switch-layout "prev";
 
           # screenshot & screencast
           "Print".action.screenshot = [];
