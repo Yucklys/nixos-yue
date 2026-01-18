@@ -35,6 +35,9 @@ in
         email = email;
         name = name;
       };
+
+      ui.conflict-marker-style = "git";
+      ui.default-command = "log";
     };
   };
 }
