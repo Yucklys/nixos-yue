@@ -30,6 +30,8 @@ in
 
   programs.jujutsu = {
     enable = true;
+    # use unstable version to track latest feature
+    package = pkgs-unstable.jujutsu;
     settings = {
       user = {
         email = email;
