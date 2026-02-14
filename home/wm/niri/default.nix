@@ -221,6 +221,13 @@ in
           ];
           open-floating = true;
         }
+        {
+          # Apps that need to have larger startup ratio
+          matches = [
+            { app-id = "emacs"; }
+          ];
+          default-column-width = { proportion = 0.5; };
+        }
       ];
 
       # bindings

@@ -9,6 +9,7 @@
     ./zellij.nix
     ./foot.nix
     ./tmux.nix
+    ./opencode.nix
     # ./ghostty.nix
     # ./wezterm
   ];
