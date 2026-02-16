@@ -11,7 +11,7 @@ $env.PATH = ($env.PATH | split row (char esep) |
 			 ])
 
 # use emacs as editor
-$env.EDITOR = 'emacsclient -nw';
+$env.EDITOR = 'hx';
 $env.VISUAL = 'emacsclient -c';
 
 # improve emacs lsp-mode performance

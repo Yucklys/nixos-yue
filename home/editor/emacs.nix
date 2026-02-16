@@ -40,7 +40,7 @@ in
     enable = true;
     package = emacs-package;
 
-    defaultEditor = true;
+    defaultEditor = false;
     # socketActivation.enable = true;
 
     client.enable = true;
