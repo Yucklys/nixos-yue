@@ -45,5 +45,6 @@
 
     # cli tools
     pkgs-unstable.claude-code
+    yadm
   ];
 }
