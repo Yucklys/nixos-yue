@@ -1,5 +1,5 @@
 # pnpm
-$env.PNPM_HOME = "/home/yucklys/.local/share/pnpm"
+$env.PNPM_HOME = $"($env.HOME)/.local/share/pnpm"
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')

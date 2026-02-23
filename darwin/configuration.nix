@@ -22,6 +22,7 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
+    nushell
   ];
 
   # Fonts
@@ -46,6 +47,10 @@
     };
   };
 
+  # User
+  system.primaryUser = "zkli";
+  users.users.zkli.home = "/Users/zkli";
+
   # Enable Touch ID for sudo
   security.pam.services.sudo_local.touchIdAuth = true;
 
@@ -54,4 +59,26 @@
 
   # Used for backwards compatibility
   system.stateVersion = 6;
+
+  stylix = {
+    enable = true;
+    image = ../wallpapers/ign_legendary.png;
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = ../themes/ef-winter-base16.yaml;
+    polarity = "dark";
+    fonts = {
+      serif = {
+        package = pkgs.noto-fonts;
+        name = "Noto Serif";
+      };
+      sansSerif = {
+        package = pkgs.noto-fonts;
+        name = "Noto Sans";
+      };
+      monospace = {
+        package = pkgs.maple-mono.NF-CN;
+        name = "Maple Mono NF CN";
+      };
+    };
+  };
 }

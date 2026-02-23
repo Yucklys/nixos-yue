@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   # Nushell for alternative user shell
@@ -11,7 +11,8 @@
     };
 
     extraConfig = (builtins.readFile ./config.nu);
-    extraEnv = (builtins.readFile ./env.nu);
+    extraEnv = (builtins.readFile ./env.nu)
+      + (if pkgs.stdenv.isDarwin then builtins.readFile ./env-darwin.nu else "");
 
     shellAliases = {
       vim = "nvim";
@@ -34,4 +35,9 @@
 
   # Enable stylix
   stylix.targets.nushell.enable = true;
+
+  # Copy import-my-brew-env.nu to nushell scripts dir on macOS
+  home.file = pkgs.lib.mkIf pkgs.stdenv.isDarwin {
+    "Library/Application Support/nushell/scripts/import-my-brew-env.nu".source = ./import-my-brew-env.nu;
+  };
 }
