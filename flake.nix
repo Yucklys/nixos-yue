@@ -38,6 +38,9 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -47,6 +50,7 @@
       stylix,
       home-manager,
       nixos-hardware,
+      nix-darwin,
       ...
     }@inputs:
     let
@@ -55,8 +59,38 @@
         inherit system;
         config.allowUnfree = true;
       };
+      darwin-system = "aarch64-darwin";
+      pkgs-unstable-darwin = import nixpkgs-unstable {
+        system = darwin-system;
+        config.allowUnfree = true;
+      };
     in
     {
+      darwinConfigurations."7cf34dda6815" = nix-darwin.lib.darwinSystem {
+        system = darwin-system;
+        specialArgs = {
+          inherit inputs;
+          pkgs-unstable = pkgs-unstable-darwin;
+        };
+        modules = [
+          ./darwin/configuration.nix
+
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "hm-backup";
+            home-manager.users.zkli.imports = [
+              ./darwin/home.nix
+            ];
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              pkgs-unstable = pkgs-unstable-darwin;
+            };
+          }
+        ];
+      };
+
       nixosConfigurations = {
         "nixos" = nixpkgs.lib.nixosSystem {
           inherit system;
