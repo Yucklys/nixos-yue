@@ -1,11 +1,12 @@
 {
+  pkgs,
   ...
 }:
 
 {
   programs.foot = {
-    enable = true;
+    enable = !pkgs.stdenv.isDarwin;
   };
 
-  stylix.targets.foot.enable = true;
+  stylix.targets.foot.enable = !pkgs.stdenv.isDarwin;
 }

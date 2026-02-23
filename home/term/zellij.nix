@@ -6,7 +6,7 @@
     settings = {
       theme = "nord";
       on_force_close = "detach";
-      copy_command = "wl-copy";
+      copy_command = if pkgs.stdenv.isDarwin then "pbcopy" else "wl-copy";
     };
   };
 

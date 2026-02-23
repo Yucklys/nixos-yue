@@ -1,14 +1,12 @@
+use std/util "path add"
+
 # pnpm
 $env.PNPM_HOME = $"($env.HOME)/.local/share/pnpm"
 
-# To add entries to PATH (on Windows you might use Path), you can use the following pattern:
-# $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
-$env.PATH = ($env.PATH | split row (char esep) |
-                prepend ['~/.cargo/bin',
-                         '~/.local/bin',
-			 '~/.emacs.d/bin',
-			 '~/.npm-global/bin'
-			 ])
+path add "~/.cargo/bin"
+path add "~/.local/bin"
+path add "~/.emacs.d/bin"
+path add "~/.npm-global/bin"
 
 # use emacs as editor
 $env.EDITOR = 'hx';

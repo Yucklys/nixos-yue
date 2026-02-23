@@ -1,11 +1,12 @@
-{ ... }:
+{ pkgs, ... }:
 
 let
   user = "zkli";
 in
 {
   imports = [
-    ../home/term/nushell
+    ../home/term
+    ../home/editor
   ];
 
   home.username = user;
@@ -14,6 +15,8 @@ in
 
   home.sessionPath = [
     "/run/current-system/sw/bin"
+    "/nix/var/nix/profiles/default/bin"
+    "/etc/profiles/per-user/${user}/bin"
   ];
 
   home.sessionVariables = {

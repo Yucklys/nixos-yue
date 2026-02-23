@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ../dev/nix.nix
+  ];
+
   # Nix settings
   nix.settings.experimental-features = [
     "nix-command"
@@ -23,6 +27,8 @@
   # System packages
   environment.systemPackages = with pkgs; [
     nushell
+
+    nh
   ];
 
   # Fonts

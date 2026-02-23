@@ -11,8 +11,8 @@
     };
 
     extraConfig = (builtins.readFile ./config.nu);
-    extraEnv = (builtins.readFile ./env.nu)
-      + (if pkgs.stdenv.isDarwin then builtins.readFile ./env-darwin.nu else "");
+    extraEnv = (if pkgs.stdenv.isDarwin then builtins.readFile ./env-darwin.nu else "")
+      + (builtins.readFile ./env.nu);
 
     shellAliases = {
       vim = "nvim";

@@ -4,9 +4,10 @@
 }:
 
 let
+  emacs-variant = if pkgs.stdenv.isDarwin then pkgs.emacs-macport else pkgs.emacs-pgtk;
   emacs-package =
     with pkgs;
-    (emacsPackagesFor emacs-pgtk).emacsWithPackages (epkgs: [
+    (emacsPackagesFor emacs-variant).emacsWithPackages (epkgs: [
       epkgs.vterm
       (epkgs.treesit-grammars.with-grammars (grammars: [
         grammars.tree-sitter-nu
