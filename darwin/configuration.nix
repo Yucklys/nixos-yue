@@ -31,8 +31,9 @@
   # System packages
   environment.systemPackages = with pkgs; [
     nushell
-
     nh
+
+    nodePackages.typescript-language-server
   ];
 
   # Fonts
