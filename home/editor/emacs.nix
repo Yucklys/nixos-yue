@@ -30,7 +30,7 @@ in
   ];
 
   programs.emacs = {
-    enable = true;
+    enable = !pkgs.stdenv.isDarwin;
     package = emacs-package;
     extraConfig = ''
       (setq standard-indent 2)
@@ -38,12 +38,10 @@ in
   };
 
   services.emacs = {
-    enable = true;
+    enable = !pkgs.stdenv.isDarwin;
     package = emacs-package;
 
     defaultEditor = false;
-    # socketActivation.enable = true;
-
     client.enable = true;
   };
 
