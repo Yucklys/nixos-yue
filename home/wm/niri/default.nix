@@ -6,7 +6,7 @@
 }:
 
 let
-  terminal = "foot";
+  terminal = "ghostty";
 in
 {
   imports = [

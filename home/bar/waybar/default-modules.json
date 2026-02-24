@@ -56,7 +56,7 @@
 						"title<.*youtube.*>": "", // Windows whose titles contain "youtube"
 						"class<.*qutebrowser.*>": " ", // Windows whose classes are "qutebrowser"
 						"class<qutebrowser> title<.*github.*>": "",
-						"class<foot>": "",
+						"class<com.mitchellh.ghostty>": "",
 						"class<emacs>": "",
 						"class<rstudio>": "",
 						"class<libreoffice-.*>": "",

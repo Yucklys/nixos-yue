@@ -7,10 +7,10 @@
   imports = [
     ./nushell
     ./zellij.nix
-    ./foot.nix
+    # ./foot.nix
     ./tmux.nix
     ./opencode.nix
-    # ./ghostty.nix
+    ./ghostty.nix
     # ./wezterm
   ];
 
