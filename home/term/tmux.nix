@@ -18,8 +18,8 @@ set -g mouse on
 # use - and \ to split horizontally and vertically
 unbind %
 unbind '"'
-bind v split-window
-bind s split-window -h
+bind s split-window
+bind v split-window -h
 bind C-a start-of-line
 
 # switch panes using Alt-arrow without prefix

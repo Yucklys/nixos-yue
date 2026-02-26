@@ -17,6 +17,7 @@ in
     "/run/current-system/sw/bin"
     "/nix/var/nix/profiles/default/bin"
     "/etc/profiles/per-user/${user}/bin"
+    "/Users/${user}/.local/bin"
   ];
 
   home.sessionVariables = {
