@@ -47,6 +47,22 @@ def aerospace-cleanup [] {
   $ghost_windows | get window-id | each {|id| aerospace close --window-id $id }
   print $"Successfully cleanup ($ghost_windows_count) ghost windows!"
 }
+
+let mise_path = $nu.default-config-dir | path join mise.nu
+^mise activate nu | save $mise_path --force
+
+use ($nu.default-config-dir | path join mise.nu)
 '';
+  };
+
+  # Colorful borders
+  services.jankyborders = {
+    enable = true;
+    settings = {
+      style = "round";
+      width = 6.0;
+      active_color = "0xff00ccff";
+      inactive_color = "0xff1a202b";
+    };
   };
 }
