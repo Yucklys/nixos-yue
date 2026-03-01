@@ -78,8 +78,9 @@
       "emacs-plus"
     ];
     casks = [
+      "nikitabobko/tap/aerospace"
     ];
-    caskArgs.appdir = "~/Applications";
+    caskArgs.appdir = "/Applications";
     caskArgs.no_quarantine = true;
     onActivation.cleanup = "none";
   };

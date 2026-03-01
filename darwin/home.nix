@@ -7,6 +7,7 @@ in
   imports = [
     ../home/term
     ../home/editor
+    ../home/wm/aerospace.nix
   ];
 
   home.username = user;
