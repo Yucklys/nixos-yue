@@ -40,19 +40,13 @@
           "g k" = "pane::ActivateNextItem"; # goto_next_buffer
           "z h" = "vim::ScrollDown";
           "z t" = "vim::ScrollUp";
-          # window/pane navigation
-          "w d" = "workspace::ActivatePaneLeft";
-          "w h" = "workspace::ActivatePaneDown";
-          "w t" = "workspace::ActivatePaneUp";
-          "w n" = "workspace::ActivatePaneRight";
-          "w shift-d" = "workspace::SwapPaneLeft";
-          "w shift-h" = "workspace::SwapPaneDown";
-          "w shift-t" = "workspace::SwapPaneUp";
-          "w shift-n" = "workspace::SwapPaneRight";
+          "w" = "vim::Word";
           "/" = "vim::Search";
           "?" = ["vim::Search" { "backwards" = true; }];
           "'" = "vim::MoveToNextMatch";
           "\"" = "vim::MoveToPreviousMatch";
+          "x" = "vim::HelixSelectLine";
+          "shift-x" = "editor::SelectLine";
         };
       }
       # visual mode
