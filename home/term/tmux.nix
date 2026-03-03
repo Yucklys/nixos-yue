@@ -20,7 +20,7 @@ unbind %
 unbind '"'
 bind s split-window
 bind v split-window -h
-bind C-a start-of-line
+bind C-a send-keys C-a
 
 # switch panes using Alt-arrow without prefix
 bind -n M-Left select-pane -L

@@ -20,22 +20,22 @@
           t = "vim::Up";
           n = "vim::Right";
           # remap displaced keys
-          l = "vim::FindTill";
-          shift-l = "vim::FindTillPrevious";
+          l = ["vim::PushFindForward" { before = true; multiline = true; }];
+          shift-l = ["vim::PushFindBackward" { after = true; multiline = true; }];
           k = "vim::DeleteRight"; # delete_selection -> use x/d behavior
         };
       }
       # normal mode specific
       {
-        context = "vim_mode == normal && !menu";
+        context = "(vim_mode == normal || vim_mode == helix_normal) && !menu";
         bindings = {
           k = "editor::Delete"; # delete selection
           "alt-k" = ["workspace::SendKeystrokes" "\" _ x"]; # delete no yank
           "g d" = "vim::StartOfLine";
           "g n" = "vim::EndOfLine";
           "g l" = "vim::WindowTop";
-          "g h" = ["workspace::SendKeystrokes" "shift-j"]; # move_line_down (join)
-          "g t" = ["workspace::SendKeystrokes" "shift-k"]; # move_line_up
+          "g h" = ["vim::Down" { "display_lines" = true; }];
+          "g t" = ["vim::Up" { "display_lines" = true; }];
           "g j" = "editor::GoToDefinition";
           "g k" = "pane::ActivateNextItem"; # goto_next_buffer
           "z h" = "vim::ScrollDown";
@@ -49,14 +49,32 @@
           "w shift-h" = "workspace::SwapPaneDown";
           "w shift-t" = "workspace::SwapPaneUp";
           "w shift-n" = "workspace::SwapPaneRight";
+          "/" = "vim::Search";
+          "?" = ["vim::Search" { "backwards" = true; }];
+          "'" = "vim::MoveToNextMatch";
+          "\"" = "vim::MoveToPreviousMatch";
         };
       }
       # visual mode
       {
-        context = "vim_mode == visual && !menu";
+        context = "(vim_mode == visual || vim_mode == helix_select) && !menu";
         bindings = {
           k = "editor::Delete";
           "alt-k" = ["workspace::SendKeystrokes" "\" _ d"];
+        };
+      }
+      # text objects
+      {
+        context = "vim_operator == a || vim_operator == i || vim_operator == cs || vim_operator == helix_next || vim_operator == helix_previous";
+        bindings = {
+          t = "vim::Tag";
+        };
+      }
+      # surround (match mode)
+      {
+        context = "vim_operator == helix_m";
+        bindings = {
+          k = "vim::PushHelixSurroundDelete";
         };
       }
       # insert mode
