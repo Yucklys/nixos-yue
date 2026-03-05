@@ -72,12 +72,6 @@ in
       # screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
       input = {
-        keyboard.xkb = {
-          layout = "us";
-          variant = "dvorak";
-          options = "caps:ctrl_modifier";
-        };
-
         touchpad = {
           # disable while typing
           dwt = true;

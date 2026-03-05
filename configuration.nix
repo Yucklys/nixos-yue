@@ -174,7 +174,8 @@ term_foreground_bright: c6d0f5
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
-  services.xserver.xkb.variant = "dvorak";
+  services.xserver.xkb.variant = "";
+  services.xserver.xkb.options = "caps:ctrl_modifier";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -194,7 +195,6 @@ term_foreground_bright: c6d0f5
   # Enable angrr for direnv gc
   services.angrr.enable = true;
   services.angrr.enableNixGcIntegration = true;
-  
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # Enable access to HID devices for WebHID API
