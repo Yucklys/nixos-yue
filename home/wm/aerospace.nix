@@ -27,8 +27,6 @@
       on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
       automatically-unhide-macos-hidden-apps = true;
 
-      key-mapping.preset = "dvorak";
-
       gaps = {
         inner.horizontal = 8;
         inner.vertical = 8;
