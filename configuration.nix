@@ -81,6 +81,7 @@ term_foreground: c6d0f5
 term_background_bright: 626880
 term_foreground_bright: c6d0f5
 '';
+      maxGenerations = 2;
     };
   };
 

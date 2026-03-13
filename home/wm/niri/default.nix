@@ -233,7 +233,7 @@ in
         {
           "Mod+Shift+Slash".action = show-hotkey-overlay;
 
-          "Mod+Return".action = spawn terminal "-e" "tmux";
+          "Mod+Return".action = spawn terminal;
           "Mod+Space".action = spawn "wofi" "--show" "drun";
           "Super+Alt+L".action = spawn "hyprlock";
 

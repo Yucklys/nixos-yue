@@ -19,7 +19,7 @@
     # apps
     goldendict-ng # dictionary
     pavucontrol # audio control
-    rustdesk # remote desktop
+    rustdesk-flutter # remote desktop
     via # keyboard configurator
     zoom-us # video conferencing
     rofi-rbw-wayland # rofi frontend for rbw
@@ -31,7 +31,7 @@
 
     # messaging
     discord # chat client
-    telegram-desktop # chat client
+    pkgs-unstable.telegram-desktop # chat client
     wechat
 
     # file extension
